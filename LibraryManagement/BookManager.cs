@@ -2,7 +2,7 @@ namespace LibraryManagement
 {
     public class BookManager
     {
-        public static BookManager instance;
+        public static BookManager instance = new BookManager();
 
         public List<Book> books = new List<Book>();
 

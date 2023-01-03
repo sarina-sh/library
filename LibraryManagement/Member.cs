@@ -26,7 +26,7 @@ namespace LibraryManagement
     {
 
     }
-    public List<Book> reservedBooks ;
+    public List<Book> reservedBooks  = new List<Book>();
     public int limit ;
 
     

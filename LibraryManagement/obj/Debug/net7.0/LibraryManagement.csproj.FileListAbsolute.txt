@@ -3,3 +3,13 @@ C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0
 C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\LibraryManagement.AssemblyInfoInputs.cache
 C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\LibraryManagement.AssemblyInfo.cs
 C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\bin\Debug\net7.0\LibraryManagement.exe
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\bin\Debug\net7.0\LibraryManagement.deps.json
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\bin\Debug\net7.0\LibraryManagement.runtimeconfig.json
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\bin\Debug\net7.0\LibraryManagement.dll
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\bin\Debug\net7.0\LibraryManagement.pdb
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\LibraryManagement.dll
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\refint\LibraryManagement.dll
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\LibraryManagement.pdb
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\LibraryManagement.genruntimeconfig.cache
+C:\Users\AsreRayaneh\Desktop\ood_code\library\LibraryManagement\obj\Debug\net7.0\ref\LibraryManagement.dll
