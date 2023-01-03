@@ -8,7 +8,7 @@ namespace LibraryManagement
 
         BookManager getInstance() {
             if (instance == null) { 
-                instance = BookManager();
+                instance = new BookManager();
             }
             return instance;
         }

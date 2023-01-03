@@ -7,8 +7,7 @@ namespace LibraryManagement
         {
             // BookManager manager = BookManager.getInstance();
             // Book[] books = manager.getBooks();
-        // console.w
-
+            // Console.Write(books);
         }
     }
 }
