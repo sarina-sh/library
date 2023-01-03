@@ -10,9 +10,5 @@ namespace LibraryManagement
         {
             content = this.content;
         }
-
-        public static bool SendEmail(int cardID){
-            
-        }
     }
 }

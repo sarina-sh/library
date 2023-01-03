@@ -1,28 +1,51 @@
 namespace LibraryManagement
 {
+    public enum BookStatus
+    {
+      Available ,
+      Reserves , 
+      Lost,
+    };
+
     class Book
     {
-        private int bookID ;
-        private string titile ;
-        private string subject ;
-        private string author ;
-        private string publisher ;
-        private string language ;
-        private int numOfPages ;
+        public int bookID ;
+        public string title ;
+        public string subject ;
+        public string author ;
+        public string publisher ;
+        public string language ;
+        public int numOfPages ;
+        public int count ;
 
-        public Book(int bookID, string titile, string subject, string author, string publisher, string language, int numOfPages)
+        private string barcode ;
+        private bool isRefrence ;
+        private double price ;
+        private DateTime publicationDate ;
+        private BookStatus status ;
+        private DateTime borrowedTime ;
+
+        public Book(int bookID, string title, string subject, string author,
+                    string publisher, string language, int numOfPages, int count,
+                    string barcode, bool isRefrence, double price, DateTime publicationDate,
+                    BookStatus status, DateTime borrowedTime)
         {
             bookID = this.bookID;
-            titile = this.titile;
+            title = this.title;
             subject = this.subject;
             author = this.author;
             publisher = this.publisher;
             language = this.language;
             numOfPages = this.numOfPages;
+            count = this.count;
+
+            barcode = this.barcode;
+            isRefrence = this.isRefrence;
+            price = this.price;
+            publicationDate = this.publicationDate;
+            status = this.status;
+            borrowedTime = this.borrowedTime;
         }
 
-        public static list<string> getInfo(titile){
-            return null;
-        }
     }
 }
