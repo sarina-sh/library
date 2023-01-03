@@ -1,0 +1,15 @@
+E:\Negar\OOD\LibraryManagement\bin\Debug\net7.0\LibraryManagement.exe
+E:\Negar\OOD\LibraryManagement\bin\Debug\net7.0\LibraryManagement.deps.json
+E:\Negar\OOD\LibraryManagement\bin\Debug\net7.0\LibraryManagement.runtimeconfig.json
+E:\Negar\OOD\LibraryManagement\bin\Debug\net7.0\LibraryManagement.dll
+E:\Negar\OOD\LibraryManagement\bin\Debug\net7.0\LibraryManagement.pdb
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.csproj.AssemblyReference.cache
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.AssemblyInfoInputs.cache
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.AssemblyInfo.cs
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.csproj.CoreCompileInputs.cache
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.dll
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\refint\LibraryManagement.dll
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.pdb
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\LibraryManagement.genruntimeconfig.cache
+E:\Negar\OOD\LibraryManagement\obj\Debug\net7.0\ref\LibraryManagement.dll
