@@ -2,9 +2,9 @@ namespace LibraryManagement
 {
     public class BookManager
     {
-        private static BookManager instance;
+        public static BookManager instance;
 
-        private List<Book> books = new List<Book>();
+        public List<Book> books = new List<Book>();
 
         BookManager getInstance() {
             if (instance == null) { 
@@ -19,6 +19,7 @@ namespace LibraryManagement
 
         public static List<Book> getExistingBook()
         {
+          List<Book> books = new List<Book>();
           return books ;
         }
 

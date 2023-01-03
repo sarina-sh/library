@@ -9,7 +9,7 @@ namespace LibraryManagement
 
         public LibCard(int cardID, string name, bool active)
         {
-            this.cardId = cardID;
+            this.cardID = cardID;
             this.name = name;
             this.active = active;
         }

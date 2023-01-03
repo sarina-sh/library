@@ -10,7 +10,8 @@ namespace LibraryManagement
       }
       public static  double getFine(int bookID , int id)
       {
-        return fine ;
+        
+        return 0 ;
       }
     }
 }
