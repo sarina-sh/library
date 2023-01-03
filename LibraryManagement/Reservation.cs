@@ -19,16 +19,16 @@ namespace LibraryManagement
             this.startDate = startDate ;
             this.duration = duration ;
         }
-        public static ReservationStatus getStatus()
+        public  ReservationStatus getStatus()
         {  
           ReservationStatus s = new ReservationStatus() ;
           return s ;
         }
-        public static bool reserveBook(int bookID , int id)
+        public  bool reserveBook(int bookID , int id)
         {
           return true ;
         }
-        public static DateTime getReturnDate()
+        public  DateTime getReturnDate()
         {
            DateTime returnDate = new DateTime () ;
           return returnDate ;

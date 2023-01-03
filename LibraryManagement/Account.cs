@@ -20,8 +20,8 @@ public class Account
   public int id ;
   public DateTime dueDate ;
   public string password ;
-  public Role role ;
-  public AccountStatus accountStatus ;
+  public string role ;
+  public string accountStatus ;
   public string emailAddress ;
   public string number ;
 
@@ -32,8 +32,8 @@ public class Account
   int age ,
   int id ,
   string password ,
-  Role role ,
-  AccountStatus accountStatus ,
+  string role ,
+  string accountStatus ,
   string emailAddress ,
   string number 
 
@@ -52,7 +52,7 @@ public class Account
   }
 
 
-  public static bool resetPassword(string new_password) 
+  public  bool resetPassword(string new_password) 
     {
       return true ;
     }

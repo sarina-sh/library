@@ -9,8 +9,8 @@ namespace LibraryManagement
   int age ,
   int id ,
   string password ,
-  Role role ,
-  AccountStatus accountStatus ,
+  string role ,
+  string accountStatus ,
   string emailAddress ,
   string number 
 ) :base( name ,
@@ -30,7 +30,7 @@ namespace LibraryManagement
     public int limit ;
 
     
-    public static List<Book> getReservedBooks()
+    public   List<Book> getReservedBooks()
     {
       List<Book> books =  new List<Book> () ;
       return books ;

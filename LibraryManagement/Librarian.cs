@@ -12,8 +12,8 @@ namespace LibraryManagement
   int age ,
   int id ,
   string password ,
-  Role role ,
-  AccountStatus accountStatus ,
+  string role ,
+  string accountStatus ,
   string emailAddress ,
   string number 
 ) :base( name ,
@@ -31,13 +31,13 @@ namespace LibraryManagement
     }
 
     private List<Member> members = new List<Member>();
-    public static bool registerMember(Member new_member){
+    public  bool registerMember(Member new_member){
       return true ; 
     }
-    public static bool removeMember(int id ){
+    public  bool removeMember(int id ){
       return true ;
     }
-    public static List<Member> getAllMembers(){
+    public  List<Member> getAllMembers(){
       List<Member> members = new List<Member>();
       return  members ;
     }
