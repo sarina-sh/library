@@ -1,11 +1,9 @@
-using system ;
 using System.Collections.Generic;
-
 
 namespace LibraryManagement
 {
 
-  public class  Librarian :Account
+  public class Librarian : Account
   {
     private List<Member> members = new List<member>();
     public static bool registerMember(Member new_member){

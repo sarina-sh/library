@@ -1,17 +1,17 @@
 namespace LibraryManagement
 {
-    class LibCard
+    public class LibCard
     {
-        private int cardID ;
-        private string name ;
-        private DateTime publishDate ;
-        private bool active;
+        public int cardID ;
+        public string name ;
+        public DateTime publishDate ;
+        public bool active;
 
         public LibCard(int cardID, string name, bool active)
         {
-            cardId = this.cardID;
-            name = this.name;
-            active = this.active;
+            this.cardId = cardID;
+            this.name = name;
+            this.active = active;
         }
 
         public static bool CheckActive(int cardID){

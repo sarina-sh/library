@@ -1,14 +1,14 @@
 namespace LibraryManagement
 {
-    class Notification
+    public class Notification
     {
-        private int notificationID ;
-        private DateTime createDate ;
-        private string content ;
+        public int notificationID ;
+        public DateTime createDate ;
+        public string content ;
 
         public Notification(string content)
         {
-            content = this.content;
+            this.content = content;
         }
     }
 }

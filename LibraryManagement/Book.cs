@@ -7,7 +7,7 @@ namespace LibraryManagement
       Lost,
     };
 
-    class Book
+    public class Book
     {
         public int bookID ;
         public string title ;
@@ -18,33 +18,33 @@ namespace LibraryManagement
         public int numOfPages ;
         public int count ;
 
-        private string barcode ;
-        private bool isRefrence ;
-        private double price ;
-        private DateTime publicationDate ;
-        private BookStatus status ;
-        private DateTime borrowedTime ;
+        public string barcode ;
+        public bool isRefrence ;
+        public double price ;
+        public DateTime publicationDate ;
+        public BookStatus status ;
+        public DateTime borrowedTime ;
 
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,
                     string barcode, bool isRefrence, double price, DateTime publicationDate,
                     BookStatus status, DateTime borrowedTime)
         {
-            bookID = this.bookID;
-            title = this.title;
-            subject = this.subject;
-            author = this.author;
-            publisher = this.publisher;
-            language = this.language;
-            numOfPages = this.numOfPages;
-            count = this.count;
+            this.bookID = bookID;
+            this.title = title;
+            this.subject = subject;
+            this.author = author;
+            this.publisher = publisher;
+            this.language = language;
+            this.numOfPages = numOfPages;
+            this.count = count;
 
-            barcode = this.barcode;
-            isRefrence = this.isRefrence;
-            price = this.price;
-            publicationDate = this.publicationDate;
-            status = this.status;
-            borrowedTime = this.borrowedTime;
+            this.barcode = barcode;
+            this.isRefrence = isRefrence;
+            this.price = price;
+            this.publicationDate = publicationDate;
+            this.status = status;
+            this.borrowedTime = borrowedTime;
         }
 
     }

@@ -1,9 +1,5 @@
-using system ;
-using System.Collections.Generic;
-
 namespace LibraryManagement
 {
-
   public enum AccountStatus
   {
     Active ,
@@ -16,8 +12,7 @@ namespace LibraryManagement
       Librarian
     };
 
-
-class Account()
+public class Account
 {
   public string name ;
   public string gender ;
@@ -62,7 +57,5 @@ class Account()
       return true ;
     }
 }
-
-
 
 }

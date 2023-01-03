@@ -1,11 +1,6 @@
-using system ;
-using System.Collections.Generic;
-
-
 namespace LibraryManagement
 {
-
-    class Fine ()
+    class Fine
     {
       public DateTime date  ;
       public  double fine  ;

@@ -1,6 +1,6 @@
 namespace LibraryManagement
 {
-    class BookManager
+    public class BookManager
     {
         private static BookManager instance;
 
@@ -15,6 +15,19 @@ namespace LibraryManagement
 
         public List<Book> getBooks() {
             return books;
+        }
+
+        public static List<Book> getExistingBook()
+        {
+          return books ;
+        }
+
+        public static bool addBook(Book book){
+          return true ;
+        }
+
+        public static bool removeBook(int bookID){
+          return true ;
         }
     }
 }

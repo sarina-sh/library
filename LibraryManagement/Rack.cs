@@ -2,13 +2,13 @@ namespace LibraryManagement
 {
     class Rack
     {
-        private int number ;
-        private string locationIdentifier ;
+        public int number ;
+        public string locationIdentifier ;
 
         public Rack(int number, string locationIdentifier)
         {
-            number = this.number;
-            locationIdentifier = this. locationIdentifier;
+            this.number = number;
+            this.locationIdentifier = locationIdentifier;
         }
     }
 }
