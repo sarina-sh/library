@@ -8,7 +8,7 @@ namespace LibraryManagement
 
         BookManager getInstance() {
             if (instance == null) { 
-                instance = BookManager();
+                instance = new BookManager();
             }
             return instance;
         }
@@ -17,10 +17,10 @@ namespace LibraryManagement
             return books;
         }
 
-        public static List<Book> getExistingBook()
-        {
-          return books ;
-        }
+        // public static List<Book> getExistingBook()
+        // {
+        //   return books ;
+        // }
 
         public static bool addBook(Book book){
           return true ;
