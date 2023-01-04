@@ -11,6 +11,7 @@ namespace LibraryManagement
         public void Notify() {
             // input = Member member
             // sms.send(member.phoneNumber, this.content)
+            Console.Write("SMS Notification sended.");
         }
     }
 }

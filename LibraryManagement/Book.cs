@@ -7,7 +7,7 @@ namespace LibraryManagement
       Lost,
     };
 
-    public class Book
+    public class Book : Rack
     {
         public int bookID ;
         public string title ;
@@ -28,7 +28,7 @@ namespace LibraryManagement
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,
                     string barcode, bool isRefrence, double price, DateTime publicationDate,
-                    BookStatus status, DateTime borrowedTime)
+                    BookStatus status, DateTime borrowedTime, int number, string locationIdentifier):base(number,locationIdentifier)
         {
             this.bookID = bookID;
             this.title = title;

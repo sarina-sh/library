@@ -1,6 +1,6 @@
 namespace LibraryManagement
 {
-    class Rack
+    public class Rack
     {
         public int number ;
         public string locationIdentifier ;
