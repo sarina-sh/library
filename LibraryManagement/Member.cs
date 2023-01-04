@@ -4,16 +4,36 @@ namespace LibraryManagement
 {
   public class  Member :Account
   {
-    public List<Book> reservedBooks ;
+    public Member( string name ,
+  string gender ,
+  int age ,
+  int id ,
+  string password ,
+  Role role ,
+  AccountStatus accountStatus ,
+  string emailAddress ,
+  string number 
+) :base( name ,
+   gender ,
+  age ,
+  id ,
+  password ,
+  role ,
+  accountStatus ,
+   emailAddress ,
+  number 
+)
+    {
+
+    }
+    public List<Book> reservedBooks  = new List<Book>();
     public int limit ;
 
-    public Member(int limit)
-    {
-      this.limit = limit ;
-    }
+    
     public static List<Book> getReservedBooks()
     {
-      return reservedBooks ;
+      List<Book> books =  new List<Book> () ;
+      return books ;
     }
 
   }

@@ -21,7 +21,8 @@ namespace LibraryManagement
         }
         public static ReservationStatus getStatus()
         {  
-            return status ;
+          ReservationStatus s = new ReservationStatus() ;
+          return s ;
         }
         public static bool reserveBook(int bookID , int id)
         {
@@ -29,6 +30,7 @@ namespace LibraryManagement
         }
         public static DateTime getReturnDate()
         {
+           DateTime returnDate = new DateTime () ;
           return returnDate ;
         }
     }

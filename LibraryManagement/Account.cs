@@ -45,7 +45,7 @@ public class Account
     this.id = id ;
     this.password = password ;
     this.role = role ;
-    title.accountStatus = accountStatus ;
+    this.accountStatus = accountStatus ;
     this.emailAddress = emailAddress ;
     this.number = number ;
 
