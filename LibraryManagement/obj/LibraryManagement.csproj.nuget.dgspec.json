@@ -1,27 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AsreRayaneh\\Desktop\\ood_code\\library\\LibraryManagement\\LibraryManagement.csproj": {}
+    "C:\\Users\\sheyb\\Desktop\\library\\LibraryManagement\\LibraryManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AsreRayaneh\\Desktop\\ood_code\\library\\LibraryManagement\\LibraryManagement.csproj": {
+    "C:\\Users\\sheyb\\Desktop\\library\\LibraryManagement\\LibraryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsreRayaneh\\Desktop\\ood_code\\library\\LibraryManagement\\LibraryManagement.csproj",
+        "projectUniqueName": "C:\\Users\\sheyb\\Desktop\\library\\LibraryManagement\\LibraryManagement.csproj",
         "projectName": "LibraryManagement",
-        "projectPath": "C:\\Users\\AsreRayaneh\\Desktop\\ood_code\\library\\LibraryManagement\\LibraryManagement.csproj",
-        "packagesPath": "C:\\Users\\AsreRayaneh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsreRayaneh\\Desktop\\ood_code\\library\\LibraryManagement\\obj\\",
+        "projectPath": "C:\\Users\\sheyb\\Desktop\\library\\LibraryManagement\\LibraryManagement.csproj",
+        "packagesPath": "C:\\Users\\sheyb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sheyb\\Desktop\\library\\LibraryManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsreRayaneh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sheyb\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
@@ -53,7 +50,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\sheyb\\.dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
