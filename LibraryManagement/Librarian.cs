@@ -5,27 +5,25 @@ namespace LibraryManagement
 
   public class Librarian : Account
   {
-    
-    
     public Librarian( string name ,
-  string gender ,
-  int age ,
-  int id ,
-  string password ,
-  string role ,
-  string accountStatus ,
-  string emailAddress ,
-  string number 
-) :base( name ,
-   gender ,
-  age ,
-  id ,
-  password ,
-  role ,
-  accountStatus ,
-   emailAddress ,
-  number 
-)
+                      string gender ,
+                      int age ,
+                      int id ,
+                      string password ,
+                      Role role ,
+                      AccountStatus accountStatus ,
+                      string emailAddress ,
+                      string number)
+                      :base( name ,
+                            gender ,
+                            age ,
+                            id ,
+                            password ,
+                            role ,
+                            accountStatus ,
+                            emailAddress ,
+                            number 
+                      )
     {
 
     }
@@ -54,6 +52,11 @@ namespace LibraryManagement
       return Bmembers;
     }
 
+    public bool printLibCard(Member member){
+      LibCard card=new LibCard(member.id, member.name, member.dueDate);
+      Console.Write("Print Card.");
+      return true;
+    }
   }
 }
 
