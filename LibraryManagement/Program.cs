@@ -5,10 +5,7 @@ namespace LibraryManagement
     {
         static void Main(string[] args)
         {
-            // BookManager manager = BookManager.getInstance();
-            // Book[] books = manager.getBooks();
-            // Console.Write(books);
-
+            
             DateTime now = DateTime.Now;
             Fine f = new Fine(now) ;
 
@@ -18,6 +15,12 @@ namespace LibraryManagement
             Member member = new Member("Fatima" ,"Female", 23 ,1  ,
             "123" ,Role.Member , AccountStatus.Active , "fatima@gmail.com" , "99999999999" ) ;
             
+
+            
+            // Account member = new Account("Fatima" ,"Female", 23 ,1  ,
+            // "123" ,Role.Member , AccountStatus.Active , "fatima@gmail.com" , "99999999999" ) ;
+            
+
             Reservation reservation = new Reservation(now , 5) ;
             BookManager bookManager = new BookManager(); 
 
