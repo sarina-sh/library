@@ -7,7 +7,7 @@ namespace LibraryManagement
       Lost,
     };
 
-    public class Book
+    public class Book : Rack
     {
         public int bookID ;
         public string title ;
@@ -24,12 +24,11 @@ namespace LibraryManagement
         public DateTime publicationDate ;
         public BookStatus status ;
         public DateTime borrowedTime ;
-        public Catalog catalog ;
 
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,
                     string barcode, bool isRefrence, double price, DateTime publicationDate,
-                    BookStatus status, DateTime borrowedTime, Catalog catalog)
+                    BookStatus status, DateTime borrowedTime, int number, string locationIdentifier):base(number,locationIdentifier)
         {
             this.bookID = bookID;
             this.title = title;
@@ -46,7 +45,6 @@ namespace LibraryManagement
             this.publicationDate = publicationDate;
             this.status = status;
             this.borrowedTime = borrowedTime;
-            this.catalog = catalog;
         }
 
     }

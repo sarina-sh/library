@@ -14,6 +14,7 @@ namespace LibraryManagement
         }
 
         public List<Book> getBooks() {
+            Console.Write("All Books return");
             return books;
         }
 

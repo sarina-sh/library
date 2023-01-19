@@ -8,10 +8,11 @@ namespace LibraryManagement
       {
         this.date = date ;
       }
-      public   double getFine(int bookID , int id)
+
+      public static  double getFine(int bookID , int id)
       {
-        
         return 0 ;
       }
+      
     }
 }
