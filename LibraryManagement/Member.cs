@@ -9,8 +9,8 @@ namespace LibraryManagement
   int age ,
   int id ,
   string password ,
-  string role ,
-  string accountStatus ,
+  Role role ,
+  AccountStatus accountStatus ,
   string emailAddress ,
   string number 
 ) :base( name ,

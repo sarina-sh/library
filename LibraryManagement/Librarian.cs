@@ -29,18 +29,27 @@ namespace LibraryManagement
     }
 
     private List<Member> members = new List<Member>();
-
-    public static bool registerMember(Member new_member){
+    public  bool registerMember(Member new_member){
       return true ; 
     }
-
-    public static bool removeMember(int id ){
+    public  bool removeMember(int id ){
       return true ;
     }
-
-    public static List<Member> getAllMembers(){
+    public  List<Member> getAllMembers(){
       List<Member> members = new List<Member>();
       return  members ;
+    }
+    
+    public List<Book> searchByMember(int id)
+    {
+      List<Book> borrowBooks = new List<Book>();
+      return borrowBooks;
+    }
+
+    public List<Member> searchByBookName(string name)
+    {
+      List<Member> Bmembers = new List<Member>();
+      return Bmembers;
     }
 
     public bool printLibCard(Member member){
