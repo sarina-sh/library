@@ -1,4 +1,13 @@
 .idea/
-LibraryManagement/.idea/
-LibraryManagement/bin/
+obj/
+bin/
+.vscode/
+.idea/*
+obj/*
+bin/*
+.vscode/*
 LibraryManagement/obj/
+LibraryManagement/bin/
+LibraryManagement/.idea/
+LibraryManagement/.vscode/
+.meta
