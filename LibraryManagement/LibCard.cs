@@ -24,9 +24,6 @@ namespace LibraryManagement
         {
             active = true;
         }
-        //public static bool CheckActive(int cardID){
-        //    if()
-        //    return true;
-        //}
+
     }
 }

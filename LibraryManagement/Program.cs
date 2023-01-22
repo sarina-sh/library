@@ -3,6 +3,16 @@ namespace LibraryManagement
 {
     class Program
     {
+        static void MemberCli(Member member)
+        {
+            
+        }
+
+        static void LibrarianCli(Librarian librarian)
+        {
+            
+        }
+        
         static void Main(string[] args)
         {
             
@@ -11,27 +21,46 @@ namespace LibraryManagement
 
             Librarian librarian = new Librarian("user" ,"Female", 22 ,2  ,
             "123"  , "user@gmail.com" , "99999999999" );
-            
-            Member member = new Member("Fatima" ,"Female", 23 ,1  ,
-            "123"  , "fatima@gmail.com" , "99999999999" ) ;
-            
 
-            
-            // Account member = new Account("Fatima" ,"Female", 23 ,1  ,
-            // "123" ,Role.Member , AccountStatus.Active , "fatima@gmail.com" , "99999999999" ) ;
-            
+            while (true)
+            {
+                Console.WriteLine("your action : ");
+                string Action = Console.ReadLine();
+                if (Action == "Login")
+                {
+                    int Id = Int32.Parse(Console.ReadLine());
+                    if (Id == librarian.id)
+                    {
+                        LibrarianCli(librarian);
+                    }
+                    else
+                    {
+                        Console.WriteLine("welcome :)");
+                        Console.WriteLine("please enter your name : ");
+                        string name = Console.ReadLine();
+                        Console.WriteLine("please enter your gender : ");
+                        string gender = Console.ReadLine();                        
+                        Console.WriteLine("please enter your age : ");
+                        int age = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("please enter your id : ");
+                        int id = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("please enter your password : ");
+                        string password = Console.ReadLine();
+                        Console.WriteLine("please enter your emailAddress : ");
+                        string emailAddress = Console.ReadLine();
+                        Console.WriteLine("please enter your number : ");
+                        string number = Console.ReadLine();
+                        
+                        Member member = new Member(name, gender, age, id, password, emailAddress, number);
+                        MemberCli(member);
 
-            Reservation reservation = new Reservation(now , 5) ;
-            BookManager bookManager = new BookManager(); 
-
-            System.Console.WriteLine( member.getReservedBooks() ); 
-            System.Console.WriteLine( f.getFine(1,1) );
-            System.Console.WriteLine( reservation.getStatus() );
-            System.Console.WriteLine( reservation.getReturnDate() );
-            System.Console.WriteLine( reservation.reserveBook(1,1) );
-            
-            //System.Console.WriteLine( librarian.searchByMember(4));
-            //System.Console.WriteLine( librarian.searchByBookName("book"));
+                    }
+                }
+                else if (Action == "Logout")
+                {
+                    Console.WriteLine("you are logged out..");
+                }
+            }
             
         }
     }
