@@ -29,11 +29,7 @@ namespace LibraryManagement
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,
                     string barcode, bool isRefrence, double price, DateTime publicationDate,
-<<<<<<<<< Temporary merge branch 1
-                    BookStatus status, DateTime borrowedTime, int number, string locationIdentifier):base(number,locationIdentifier)
-=========
                     BookStatus status, DateTime borrowedTime, Catalog catalog)
->>>>>>>>> Temporary merge branch 2
         {
             this.bookID = bookID;
             this.title = title;

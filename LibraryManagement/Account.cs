@@ -3,7 +3,7 @@ namespace LibraryManagement
   public enum AccountStatus
   {
     Active ,
-    CLosed
+    InActive
   }
 
   public enum Role
@@ -51,34 +51,7 @@ namespace LibraryManagement
     {
         return true ;
     }
-
-    public List<Catalog> searchByTitle(string title)
-    {
-      List<Catalog> Tcatalogs = new List<Catalog>();
-      return Tcatalogs;
-    }
-
-    public List<Catalog> searchByAuthor(string author)
-    {
-      List<Catalog> Acatalogs = new List<Catalog>();
-      return Acatalogs;
-    }
-
-    public List<Catalog> searchBySubject(string subject)
-    {
-      List<Catalog> Scatalogs = new List<Catalog>();
-      return Scatalogs;
-    }
-
-    public List<Catalog> searchByPubDate(DateTime pubDate)
-    {
-      List<Catalog> Pcatalogs = new List<Catalog>();
-      return Pcatalogs;
-    }
-  
-
-
-
+    
 }
 
 

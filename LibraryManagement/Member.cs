@@ -28,6 +28,8 @@ namespace LibraryManagement
     }
     public List<Book> reservedBooks  = new List<Book>();
     public int limit ;
+    public LibCard card;
+    
 
     
     public   List<Book> getReservedBooks()
@@ -35,7 +37,25 @@ namespace LibraryManagement
       List<Book> books =  new List<Book> () ;
       return books ;
     }
-
+    
+    public void setInActive()
+    {
+      if (accountStatus == AccountStatus.InActive)
+      {
+        card.active = false;
+      }
+    }
+    
+    public void setActive()
+    {
+      if (accountStatus == AccountStatus.Active)
+      {
+        card.active = true;
+      }
+    }
+    
+    
   }
+  
 }
 

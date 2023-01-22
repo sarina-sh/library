@@ -33,9 +33,9 @@ namespace LibraryManagement
             System.Console.WriteLine( reservation.getReturnDate() );
             System.Console.WriteLine( reservation.reserveBook(1,1) );
             
-            System.Console.WriteLine( librarian.searchByMember(4));
-            System.Console.WriteLine( librarian.searchByBookName("book"));
-            System.Console.WriteLine( member.searchBySubject("history"));
+            //System.Console.WriteLine( librarian.searchByMember(4));
+            //System.Console.WriteLine( librarian.searchByBookName("book"));
+            
         }
     }
 }
