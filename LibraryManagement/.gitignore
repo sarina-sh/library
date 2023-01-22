@@ -11,3 +11,7 @@ LibraryManagement/bin/
 LibraryManagement/.idea/
 LibraryManagement/.vscode/
 .meta
+/.vscode/
+/bin/
+/obj/
+/.idea/
