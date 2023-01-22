@@ -116,8 +116,14 @@
             members.Add(new_member);
         }
         
-        public  void removeMember(int id ){
-            
+        public void removeMember(int id){
+            for (int i = 0; i < members.Count; i++)
+            {
+                if (members[i].id == id)
+                {
+                    members.Remove(members[i]);
+                }
+            }
         }
         
         public  List<Member> getAllMembers(){
