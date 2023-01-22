@@ -22,7 +22,7 @@ namespace LibraryManagement
     {
 
     }
-    public List<Book> reservedBooks  = new List<Book>();
+    public List<Reservation> reserved  = new List<Reservation>();
     public int limit ;
     public LibCard card;
     
@@ -30,9 +30,18 @@ namespace LibraryManagement
     
     public List<Book> getReservedBooks()
     {
-      return reservedBooks ;
+      List<Book> booksReserved = new List<Book>();
+      for (int i = 0; i < reserved.Count; i++)
+      {
+        booksReserved.Add(reserved[i].book);
+      }
+      return booksReserved ;
     }
-    
+
+    public void AddReservation(Reservation reservation)
+    {
+      reserved.Add(reservation);
+    }
     
   }
   

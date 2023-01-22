@@ -129,6 +129,35 @@
         public  List<Member> getAllMembers(){
             return members ;
         }
+
+        public bool reserveBook(int bookID , int id, DateTime startDate, DateTime dueDate)
+        {
+            Book book = null;
+            for (int i = 0; i < allBooks.Count; i++)
+            {
+                if (allBooks[i].bookID == bookID)
+                {
+                    if (allBooks[i].status == BookStatus.Reserves)
+                    {
+                        return false;
+                    }
+                    allBooks[i].status = BookStatus.Reserves;
+                    book = allBooks[i];
+                }
+            }
+
+            Reservation reserve = new Reservation(startDate, dueDate, book);
+            for (int i = 0; i < members.Count; i++)
+            {
+                if (members[i].id == id)
+                {
+                    members[i].reserved.Add(reserve);
+                }
+            }
+
+            return true;
+        }
+        
     }
 }
 
