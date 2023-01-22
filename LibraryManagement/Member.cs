@@ -10,7 +10,6 @@ namespace LibraryManagement
   int id ,
   string password ,
   Role role ,
-  AccountStatus accountStatus ,
   string emailAddress ,
   string number 
 ) :base( name ,
@@ -19,7 +18,6 @@ namespace LibraryManagement
   id ,
   password ,
   role ,
-  accountStatus ,
    emailAddress ,
   number 
 )
@@ -32,26 +30,9 @@ namespace LibraryManagement
     
 
     
-    public   List<Book> getReservedBooks()
+    public List<Book> getReservedBooks()
     {
-      List<Book> books =  new List<Book> () ;
-      return books ;
-    }
-    
-    public void setInActive()
-    {
-      if (accountStatus == AccountStatus.InActive)
-      {
-        card.active = false;
-      }
-    }
-    
-    public void setActive()
-    {
-      if (accountStatus == AccountStatus.Active)
-      {
-        card.active = true;
-      }
+      return reservedBooks ;
     }
     
     

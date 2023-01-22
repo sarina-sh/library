@@ -10,4 +10,9 @@ LibraryManagement/obj/
 LibraryManagement/bin/
 LibraryManagement/.idea/
 LibraryManagement/.vscode/
+LibraryManagement/obj/*
+LibraryManagement/bin/*
+LibraryManagement/.idea/*
+LibraryManagement/.vscode/*
 .meta
+LibraryManagement/.meta

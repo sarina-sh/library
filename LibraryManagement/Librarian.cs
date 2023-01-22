@@ -11,7 +11,6 @@ namespace LibraryManagement
                       int id ,
                       string password ,
                       Role role ,
-                      AccountStatus accountStatus ,
                       string emailAddress ,
                       string number)
                       :base( name ,
@@ -20,7 +19,6 @@ namespace LibraryManagement
                             id ,
                             password ,
                             role ,
-                            accountStatus ,
                             emailAddress ,
                             number 
                       )

@@ -1,11 +1,5 @@
 namespace LibraryManagement
 {
-  public enum AccountStatus
-  {
-    Active ,
-    InActive
-  }
-
   public enum Role
   {
     Member ,
@@ -21,7 +15,6 @@ namespace LibraryManagement
     public DateTime dueDate ;
     public string password ;
     public Role role ;
-    public AccountStatus accountStatus ;
     public string emailAddress ;
     public string number ;
 
@@ -31,7 +24,6 @@ namespace LibraryManagement
                     int id ,
                     string password ,
                     Role role ,
-                    AccountStatus accountStatus ,
                     string emailAddress ,
                     string number)
     {
@@ -41,7 +33,6 @@ namespace LibraryManagement
       this.id = id ;
       this.password = password ;
       this.role = role ;
-      this.accountStatus = accountStatus ;
       this.emailAddress = emailAddress ;
       this.number = number ;
 

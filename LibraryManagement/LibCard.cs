@@ -15,6 +15,15 @@ namespace LibraryManagement
             this.active = active;
         }
 
+        public void setInActive()
+        {
+            active = false;
+        }
+    
+        public void setActive()
+        {
+            active = true;
+        }
         //public static bool CheckActive(int cardID){
         //    if()
         //    return true;
