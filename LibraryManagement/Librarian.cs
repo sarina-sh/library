@@ -10,7 +10,6 @@ namespace LibraryManagement
                       int age ,
                       int id ,
                       string password ,
-                      Role role ,
                       string emailAddress ,
                       string number)
                       :base( name ,
@@ -18,7 +17,6 @@ namespace LibraryManagement
                             age ,
                             id ,
                             password ,
-                            role ,
                             emailAddress ,
                             number 
                       )
@@ -26,16 +24,6 @@ namespace LibraryManagement
 
     }
     
-    public  bool registerMember(Member new_member){
-      return true ; 
-    }
-    public  bool removeMember(int id ){
-      return true ;
-    }
-    public  List<Member> getAllMembers(){
-      List<Member> members = new List<Member>();
-      return  members ;
-    }
     
     public bool printLibCard(Member member){
       LibCard card = new LibCard(member.id, member.name, member.dueDate, true);

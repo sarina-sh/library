@@ -10,10 +10,10 @@ namespace LibraryManagement
             Fine f = new Fine(now) ;
 
             Librarian librarian = new Librarian("user" ,"Female", 22 ,2  ,
-            "123" , Role.Librarian , AccountStatus.Active , "user@gmail.com" , "99999999999" );
+            "123"  , "user@gmail.com" , "99999999999" );
             
             Member member = new Member("Fatima" ,"Female", 23 ,1  ,
-            "123" ,Role.Member , AccountStatus.Active , "fatima@gmail.com" , "99999999999" ) ;
+            "123"  , "fatima@gmail.com" , "99999999999" ) ;
             
 
             
@@ -26,9 +26,6 @@ namespace LibraryManagement
 
             System.Console.WriteLine( member.getReservedBooks() ); 
             System.Console.WriteLine( f.getFine(1,1) );
-            System.Console.WriteLine( librarian.registerMember(member) );
-            System.Console.WriteLine( librarian.removeMember(1));
-            System.Console.WriteLine( librarian.getAllMembers());
             System.Console.WriteLine( reservation.getStatus() );
             System.Console.WriteLine( reservation.getReturnDate() );
             System.Console.WriteLine( reservation.reserveBook(1,1) );

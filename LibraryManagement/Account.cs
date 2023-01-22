@@ -1,12 +1,6 @@
 namespace LibraryManagement
 {
-  public enum Role
-  {
-    Member ,
-    Librarian
-  };
-
-  public class Account
+    public class Account
   {
     public string name ;
     public string gender ;
@@ -14,7 +8,6 @@ namespace LibraryManagement
     public int id ;
     public DateTime dueDate ;
     public string password ;
-    public Role role ;
     public string emailAddress ;
     public string number ;
 
@@ -23,7 +16,6 @@ namespace LibraryManagement
                     int age ,
                     int id ,
                     string password ,
-                    Role role ,
                     string emailAddress ,
                     string number)
     {
@@ -32,7 +24,6 @@ namespace LibraryManagement
       this.age = age ;
       this.id = id ;
       this.password = password ;
-      this.role = role ;
       this.emailAddress = emailAddress ;
       this.number = number ;
 

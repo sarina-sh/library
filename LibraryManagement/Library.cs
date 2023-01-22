@@ -110,6 +110,19 @@
 
             return check;
         }
+        
+        public  void registerMember(Member new_member)
+        {
+            members.Add(new_member);
+        }
+        
+        public  void removeMember(int id ){
+            
+        }
+        
+        public  List<Member> getAllMembers(){
+            return members ;
+        }
     }
 }
 
