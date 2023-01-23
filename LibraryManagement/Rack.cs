@@ -10,10 +10,5 @@ namespace LibraryManagement
             this.number = number;
             this.locationIdentifier = locationIdentifier;
         }
-
-        protected Rack()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
