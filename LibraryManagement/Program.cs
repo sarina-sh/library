@@ -61,6 +61,19 @@ namespace LibraryManagement
                 }
             }
 
+            if (Action == "reserve book")
+            {
+                Console.WriteLine("please enter the start date");
+                DateTime startDate = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the due date");
+                DateTime dueDate = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the id : ");
+                int memberId = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the bookId");
+                int bookId = Int32.Parse(Console.ReadLine());
+                library.reserveBook(bookId, memberId, startDate, dueDate);
+            }
+
         }
 
         static void LibrarianCli(Librarian librarian, Library library)
@@ -116,6 +129,19 @@ namespace LibraryManagement
                 Console.WriteLine("please enter the pubDate");
                 int memberId = Int32.Parse(Console.ReadLine());
                 library.searchByMember(memberId);
+            }
+
+            if (Action == "set InActive")
+            {
+                Console.WriteLine("please enter the id : ");
+                int memberId = Int32.Parse(Console.ReadLine());
+                for (int i = 0; i < library.members.Count; i++)
+                {
+                    if (library.members[i].id == memberId)
+                    {
+                        library.members[i].card.setInActive();
+                    }
+                }
             }
         }
         
