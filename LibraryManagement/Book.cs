@@ -46,7 +46,6 @@ namespace LibraryManagement
             this.publicationDate = publicationDate;
             this.status = status;
             this.borrowedTime = borrowedTime;
-            this.catalog = catalog;
         }
 
     }
