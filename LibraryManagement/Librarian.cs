@@ -21,13 +21,7 @@ namespace LibraryManagement
     {
 
     }
-    
-    
-    public bool printLibCard(Member member){
-      Console.Write("Print Card.");
-      return true;
-    }
-    
+
   }
 }
 
