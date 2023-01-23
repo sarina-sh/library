@@ -1,36 +1,49 @@
-namespace LibraryManagement
-{
-    public class BookManager
-    {
-        public static BookManager instance = new BookManager();
+// namespace LibraryManagement
+// {
+//     public class BookManager
+//     {
+//         public static BookManager instance = new BookManager();
 
-        public List<Book> books = new List<Book>();
+//         public List<Book> books = new List<Book>();
 
-        BookManager getInstance() {
-            if (instance == null) { 
-                instance = new BookManager();
-            }
-            return instance;
-        }
+//         BookManager getInstance() {
+//             if (instance == null) { 
+//                 instance = new BookManager();
+//             }
+//             return instance;
+//         }
 
-        public List<Book> getBooks() {
-            Console.Write("All Books return");
-            return books;
-        }
+//         public void getBooks() {
+//             Console.Write("All Books Are:");
 
-        public static List<Book> getExistingBook()
-        {
-          List<Book> books = new List<Book>();
-          return books ;
-        }
+//             for(int i=0; i<books.count; i++)
+//               Console.WriteLine($"{i+1} => {books[i]}");
+//         }
 
-        public static bool addBook(Book book){
-          return true ;
-        }
+//         public void getExistingBook()
+//         {
+//           Console.Write("All Available Books Are:");
 
-        public static bool removeBook(int bookID){
-          return true ;
-        }
-    }
-}
+//           for(int i=0; i<books.count; i++)
+//             if (books[i].status == BookStatus.Available)
+//               Console.WriteLine($"{i+1} => {books[i]}");
+//         }
+
+//         public static bool addBook(Book book){
+//           books.Add(book)
+
+//           Console.Write("successfully")
+//           return true ;
+//         }
+
+//         public static bool removeBook(int bookID){
+//           for(int i=0; i<books.count; i++)
+//             if (books[i].bookID == bookID)
+//               books.RemoveAt(i)
+
+//           Console.Write("successfully")
+//           return true ;
+//         }
+//     }
+// }
 
