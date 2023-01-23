@@ -7,7 +7,6 @@ namespace LibraryManagement
     public int age ;
     public int id ;
     public DateTime dueDate ;
-    public string password ;
     public string emailAddress ;
     public string number ;
 
@@ -15,7 +14,6 @@ namespace LibraryManagement
                     string gender ,
                     int age ,
                     int id ,
-                    string password ,
                     string emailAddress ,
                     string number)
     {
@@ -23,7 +21,6 @@ namespace LibraryManagement
       this.gender = gender ;
       this.age = age ;
       this.id = id ;
-      this.password = password ;
       this.emailAddress = emailAddress ;
       this.number = number ;
 

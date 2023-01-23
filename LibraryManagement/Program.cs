@@ -3,24 +3,108 @@ namespace LibraryManagement
 {
     class Program
     {
-        static void MemberCli(Member member)
+        static void MemberCli(int id, Library library)
         {
+            Console.WriteLine("welcome :)");
+            string Action = Console.ReadLine();
             
+            if (Action == "search book by title")
+            {
+                Console.WriteLine("please enter the title");
+                string title = Console.ReadLine();
+                library.searchByTitle(title);
+            }
+            
+            if (Action == "search book by author")
+            {
+                Console.WriteLine("please enter the author");
+                string author = Console.ReadLine();
+                library.searchByAuthor(author);
+            }
+            
+            if (Action == "search book by subject")
+            {
+                Console.WriteLine("please enter the subject");
+                string subject = Console.ReadLine();
+                library.searchBySubject(subject);
+            }          
+            
+            if (Action == "search book by pubDate")
+            {
+                Console.WriteLine("please enter the pubDate");
+                DateTime pubDate = DateTime.Parse(Console.ReadLine());
+                library.searchByPubDate(pubDate);
+            }
+
         }
 
-        static void LibrarianCli(Librarian librarian)
+        static void LibrarianCli(Librarian librarian, Library library)
         {
+            string Action = Console.ReadLine();
             
+            if (Action == "register member")
+            {
+                Console.WriteLine("please enter the name : ");
+                string name = Console.ReadLine();
+                Console.WriteLine("please enter the gender : ");
+                string gender = Console.ReadLine();                        
+                Console.WriteLine("please enter the age : ");
+                int age = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the id : ");
+                int id = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the emailAddress : ");
+                string emailAddress = Console.ReadLine();
+                Console.WriteLine("please enter the number : ");
+                string number = Console.ReadLine();
+                Member member = new Member(name, gender, age, id, emailAddress, number);
+                library.registerMember(member);
+            }
+
+            if (Action == "remove member")
+            {
+                Console.WriteLine("please enter the id : ");
+                int id = Int32.Parse(Console.ReadLine());
+                library.removeMember(id);
+            }
+
+            if (Action == "get all member")
+            {
+                library.getAllMembers();
+            }
+
+            if (Action == "check active card")
+            {
+                Console.WriteLine("please enter the id : ");
+                int id = Int32.Parse(Console.ReadLine());
+                library.checkActiveCard(id);
+            }
+            
+            if (Action == "search member by bookName")
+            {
+                Console.WriteLine("please enter the pubDate");
+                string bookName = Console.ReadLine();
+                library.searchByBookName(bookName);
+            }
+            
+            if (Action == "search book by memberId")
+            {
+                Console.WriteLine("please enter the pubDate");
+                int memberId = Int32.Parse(Console.ReadLine());
+                library.searchByMember(memberId);
+            }
         }
         
         static void Main(string[] args)
         {
-            
             DateTime now = DateTime.Now;
             Fine f = new Fine(now) ;
+    
+            Librarian librarian = new Librarian("user" ,"Female", 22 ,2 ,
+                "user@gmail.com" , "99999999999" );
 
-            Librarian librarian = new Librarian("user" ,"Female", 22 ,2  ,
-            "123"  , "user@gmail.com" , "99999999999" );
+            List<Book> allBooks = new List<Book>();
+            List<Member> allMembers = new List<Member>();
+            Library library = new Library(allBooks, allMembers);
 
             while (true)
             {
@@ -31,34 +115,27 @@ namespace LibraryManagement
                     int Id = Int32.Parse(Console.ReadLine());
                     if (Id == librarian.id)
                     {
-                        LibrarianCli(librarian);
+                        LibrarianCli(librarian, library);
                     }
                     else
                     {
-                        Console.WriteLine("welcome :)");
-                        Console.WriteLine("please enter your name : ");
-                        string name = Console.ReadLine();
-                        Console.WriteLine("please enter your gender : ");
-                        string gender = Console.ReadLine();                        
-                        Console.WriteLine("please enter your age : ");
-                        int age = Int32.Parse(Console.ReadLine());
-                        Console.WriteLine("please enter your id : ");
-                        int id = Int32.Parse(Console.ReadLine());
-                        Console.WriteLine("please enter your password : ");
-                        string password = Console.ReadLine();
-                        Console.WriteLine("please enter your emailAddress : ");
-                        string emailAddress = Console.ReadLine();
-                        Console.WriteLine("please enter your number : ");
-                        string number = Console.ReadLine();
-                        
-                        Member member = new Member(name, gender, age, id, password, emailAddress, number);
-                        MemberCli(member);
-
+                        for (int i = 0; i < library.members.Count; i++)
+                        {
+                            if (library.members[i].id == Id)
+                            {
+                                MemberCli(library.members[i].id, library);
+                            }
+                            else
+                            {
+                                Console.WriteLine("This person is not registered!");
+                            }
+                        }
                     }
                 }
-                else if (Action == "Logout")
+                else if (Action == "quit")
                 {
-                    Console.WriteLine("you are logged out..");
+                    Console.WriteLine("power off!");
+                    return;
                 }
             }
             

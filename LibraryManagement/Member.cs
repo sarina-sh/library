@@ -8,14 +8,12 @@ namespace LibraryManagement
   string gender ,
   int age ,
   int id ,
-  string password ,
   string emailAddress ,
   string number 
 ) :base( name ,
    gender ,
   age ,
   id ,
-  password ,
    emailAddress ,
   number 
 )

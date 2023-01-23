@@ -2,7 +2,7 @@
 {
     public class Library
     {
-        private List<Member> members = new List<Member>();
+        public List<Member> members;
         public List<Book> allBooks;
 
         public Library(List<Book> allBooks, List<Member> members)
