@@ -29,7 +29,7 @@ namespace LibraryManagement
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,
                     string barcode, bool isRefrence, double price, DateTime publicationDate,
-                    BookStatus status, DateTime borrowedTime, Catalog catalog)
+                    BookStatus status, DateTime borrowedTime)
         {
             this.bookID = bookID;
             this.title = title;

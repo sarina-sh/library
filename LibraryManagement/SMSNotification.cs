@@ -13,7 +13,7 @@ namespace LibraryManagement
             // sms.send(member.phoneNumber, this.content)
 
             Console.Write($"SMS Notification Sended To {number}.");
-            Console.Write($"Content Of SMS: {content}")
+            Console.Write($"Content Of SMS: {content}");
         }
     }
 }

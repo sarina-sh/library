@@ -1,49 +1,49 @@
-namespace LibraryManagement
-{
-    public class BookManager
-    {
-        public static BookManager instance = new BookManager();
+// namespace LibraryManagement
+// {
+//     public class BookManager
+//     {
+//         public static BookManager instance = new BookManager();
 
-        public List<Book> books = new List<Book>();
+//         public List<Book> books = new List<Book>();
 
-        BookManager getInstance() {
-            if (instance == null) { 
-                instance = new BookManager();
-            }
-            return instance;
-        }
+//         BookManager getInstance() {
+//             if (instance == null) { 
+//                 instance = new BookManager();
+//             }
+//             return instance;
+//         }
 
-        public void getBooks() {
-            Console.Write("All Books Are:");
+//         public void getBooks() {
+//             Console.Write("All Books Are:");
 
-            for(int i=0; i<books.count; i++)
-              Console.WriteLine($"{i+1} => {books[i]}");
-        }
+//             for(int i=0; i<books.count; i++)
+//               Console.WriteLine($"{i+1} => {books[i]}");
+//         }
 
-        public void getExistingBook()
-        {
-          Console.Write("All Available Books Are:");
+//         public void getExistingBook()
+//         {
+//           Console.Write("All Available Books Are:");
 
-          for(int i=0; i<books.count; i++)
-            if (books[i].status == BookStatus.Available)
-              Console.WriteLine($"{i+1} => {books[i]}");
-        }
+//           for(int i=0; i<books.count; i++)
+//             if (books[i].status == BookStatus.Available)
+//               Console.WriteLine($"{i+1} => {books[i]}");
+//         }
 
-        public static bool addBook(Book book){
-          books.Add(book)
+//         public static bool addBook(Book book){
+//           books.Add(book)
 
-          Console.Write("successfully")
-          return true ;
-        }
+//           Console.Write("successfully")
+//           return true ;
+//         }
 
-        public static bool removeBook(int bookID){
-          for(int i=0; i<books.count; i++)
-            if (books[i].bookID == bookID)
-              books.RemoveAt(i)
+//         public static bool removeBook(int bookID){
+//           for(int i=0; i<books.count; i++)
+//             if (books[i].bookID == bookID)
+//               books.RemoveAt(i)
 
-          Console.Write("successfully")
-          return true ;
-        }
-    }
-}
+//           Console.Write("successfully")
+//           return true ;
+//         }
+//     }
+// }
 
