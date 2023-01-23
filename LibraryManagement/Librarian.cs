@@ -24,7 +24,6 @@ namespace LibraryManagement
     
     
     public bool printLibCard(Member member){
-      LibCard card = new LibCard(member.id, member.name, member.dueDate, true);
       Console.Write("Print Card.");
       return true;
     }
