@@ -2,17 +2,17 @@
 {
     public class Library
     {
-        public static Library instance = new Library();
+        // public static Library instance = new Library();
 
         public List<Member> members;
         public List<Book> allBooks;
 
-        Library getInstance() {
-            if (instance == null) { 
-                instance = new Library();
-            }
-            return instance;
-        }
+        // Library getInstance() {
+        //     if (instance == null) { 
+        //         instance = new Library();
+        //     }
+        //     return instance;
+        // }
 
         public Library(List<Book> allBooks, List<Member> members)
         {
@@ -23,7 +23,7 @@
         public void getBooks() {
             Console.Write("All Books Are:");
 
-            for(int i=0; i<allBooks.count; i++)
+            for(int i=0; i<allBooks.Count; i++)
               Console.WriteLine($"{i+1} => {allBooks[i]}");
         }
 
@@ -31,24 +31,24 @@
         {
           Console.Write("All Available Books Are:");
 
-          for(int i=0; i<allBooks.count; i++)
+          for(int i=0; i<allBooks.Count; i++)
             if (allBooks[i].status == BookStatus.Available)
               Console.WriteLine($"{i+1} => {allBooks[i]}");
         }
 
-        public static bool addBook(Book book){
-          allBooks.Add(book)
+        public bool addBook(Book book){
+          allBooks.Add(book);
 
-          Console.Write("successfully")
+          Console.Write("successfully");
           return true ;
         }
 
-        public static bool removeBook(int bookID){
-          for(int i=0; i<allBooks.count; i++)
+        public bool removeBook(int bookID){
+          for(int i=0; i<allBooks.Count; i++)
             if (allBooks[i].bookID == bookID)
-              allBooks.RemoveAt(i)
+              allBooks.RemoveAt(i);
 
-          Console.Write("successfully")
+          Console.Write("successfully");
           return true ;
         }
 
@@ -164,20 +164,20 @@
         }
         
         public void removeMember(int id){
+
             for (int i = 0; i < members.Count; i++)
             {
                 if (members[i].id == id)
                 {
+                    SMSNotification sms_not = new SMSNotification("Expired Your Membership." , members[i].number);
+                    sms_not.Notify();
+
+                    EmailNotification email_not = new EmailNotification("Expired Your Membership." , members[i].emailAddress);
+                    email_not.Notify();
+
                     members.Remove(members[i]);
-                    member = members[i]
                 }
             }
-
-            SMSNotification sms_not = new SMSNotification("Expired Your Membership." , member.number);
-            sms_not.Notify();
-
-            EmailNotification email_not = new EmailNotification("Expired Your Membership." , member.emailAddress);
-            email_not.Notify();
         }
         
         public List<Member> getAllMembers(){
@@ -201,22 +201,21 @@
             }
 
             Reservation reserve = new Reservation(startDate, dueDate, book);
+            
             for (int i = 0; i < members.Count; i++)
             {
                 if (members[i].id == id)
                 {
                     members[i].reserved.Add(reserve);
-                    member = members[i]
+
+                    string title_book = book.title;
+                    SMSNotification sms_not = new SMSNotification($"You reserved {title_book}." , members[i].number);
+                    sms_not.Notify();
+
+                    EmailNotification email_not = new EmailNotification($"You reserved {title_book}." , members[i].emailAddress);
+                    email_not.Notify();                  
                 }
-            }
-
-            title_book = book.title
-            SMSNotification sms_not = new SMSNotification($"You reserved {title_book}." , member.number);
-            sms_not.Notify();
-
-            EmailNotification email_not = new EmailNotification($"You reserved {title_book}." , member.emailAddress);
-            email_not.Notify();
-
+            }            
             return true;
         }
         

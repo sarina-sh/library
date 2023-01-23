@@ -12,7 +12,7 @@ namespace LibraryManagement
             // input = Member member
             // email.send(member.email, this.content)
             Console.Write($"Email Notification Sended To {emailAddress}.");
-            Console.Write($"Content Of Email: {content}")
+            Console.Write($"Content Of Email: {content}");
         }
     }
 }

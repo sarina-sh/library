@@ -13,16 +13,16 @@ namespace LibraryManagement
             return instance;
         }
 
-        public void getBooks() {
-            Console.Write("All Books Are:");
+//         public void getBooks() {
+//             Console.Write("All Books Are:");
 
-            for(int i=0; i<books.count; i++)
-              Console.WriteLine($"{i+1} => {books[i]}");
-        }
+//             for(int i=0; i<books.count; i++)
+//               Console.WriteLine($"{i+1} => {books[i]}");
+//         }
 
-        public void getExistingBook()
-        {
-          Console.Write("All Available Books Are:");
+//         public void getExistingBook()
+//         {
+//           Console.Write("All Available Books Are:");
 
           for(int i=0; i<books.count; i++)
             if (books[i].status == BookStatus.Available)

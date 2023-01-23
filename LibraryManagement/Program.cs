@@ -159,6 +159,8 @@ namespace LibraryManagement
             Librarian librarian = new Librarian("user" ,"Female", 22 ,2 ,
                 "user@gmail.com" , "99999999999" );
 
+            Book book_1 = new Book(1, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available, new DateTime(2023, 1, 23));
+
             List<Book> allBooks = new List<Book>();
             List<Member> allMembers = new List<Member>();
             Library library = new Library(allBooks, allMembers);
