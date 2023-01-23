@@ -2,13 +2,54 @@
 {
     public class Library
     {
+        public static Library instance = new Library();
+
         public List<Member> members;
         public List<Book> allBooks;
+
+        Library getInstance() {
+            if (instance == null) { 
+                instance = new Library();
+            }
+            return instance;
+        }
 
         public Library(List<Book> allBooks, List<Member> members)
         {
             this.allBooks = allBooks;
             this.members = members;
+        }
+
+        public void getBooks() {
+            Console.Write("All Books Are:");
+
+            for(int i=0; i<allBooks.count; i++)
+              Console.WriteLine($"{i+1} => {allBooks[i]}");
+        }
+
+        public void getExistingBook()
+        {
+          Console.Write("All Available Books Are:");
+
+          for(int i=0; i<allBooks.count; i++)
+            if (allBooks[i].status == BookStatus.Available)
+              Console.WriteLine($"{i+1} => {allBooks[i]}");
+        }
+
+        public static bool addBook(Book book){
+          allBooks.Add(book)
+
+          Console.Write("successfully")
+          return true ;
+        }
+
+        public static bool removeBook(int bookID){
+          for(int i=0; i<allBooks.count; i++)
+            if (allBooks[i].bookID == bookID)
+              allBooks.RemoveAt(i)
+
+          Console.Write("successfully")
+          return true ;
         }
 
         public List<Catalog> searchByTitle(string title)
@@ -111,9 +152,15 @@
             return check;
         }
         
-        public  void registerMember(Member new_member)
+        public void registerMember(Member new_member)
         {
             members.Add(new_member);
+
+            SMSNotification sms_not = new SMSNotification("Welcome To Library." , new_member.number);
+            sms_not.Notify();
+
+            EmailNotification email_not = new EmailNotification("Welcome To Library." , new_member.emailAddress);
+            email_not.Notify();
         }
         
         public void removeMember(int id){
@@ -122,11 +169,18 @@
                 if (members[i].id == id)
                 {
                     members.Remove(members[i]);
+                    member = members[i]
                 }
             }
+
+            SMSNotification sms_not = new SMSNotification("Expired Your Membership." , member.number);
+            sms_not.Notify();
+
+            EmailNotification email_not = new EmailNotification("Expired Your Membership." , member.emailAddress);
+            email_not.Notify();
         }
         
-        public  List<Member> getAllMembers(){
+        public List<Member> getAllMembers(){
             return members ;
         }
 
@@ -152,8 +206,16 @@
                 if (members[i].id == id)
                 {
                     members[i].reserved.Add(reserve);
+                    member = members[i]
                 }
             }
+
+            title_book = book.title
+            SMSNotification sms_not = new SMSNotification($"You reserved {title_book}." , member.number);
+            sms_not.Notify();
+
+            EmailNotification email_not = new EmailNotification($"You reserved {title_book}." , member.emailAddress);
+            email_not.Notify();
 
             return true;
         }

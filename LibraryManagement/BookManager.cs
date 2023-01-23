@@ -13,18 +13,34 @@
             }
             return instance;
         }
-        public List<Book> getBooks() {
-            Console.Write("All Books return");
-            return books;
+
+        public void getBooks() {
+            Console.Write("All Books Are:");
+
+            for(int i=0; i<books.count; i++)
+              Console.WriteLine($"{i+1} => {books[i]}");
         }
-        public static List<Book> getExistingBook()
+
+        public void getExistingBook()
         {
-          return books ;
+          Console.Write("All Available Books Are:");
+
+          for(int i=0; i<books.count; i++)
+            if (books[i].status == BookStatus.Available)
+              Console.WriteLine($"{i+1} => {books[i]}");
         }
         public static bool addBook(Book book){
+          books.Add(book)
+
+          Console.Write("successfully")
           return true ;
         }
         public static bool removeBook(int bookID){
+          for(int i=0; i<books.count; i++)
+            if (books[i].bookID == bookID)
+              books.RemoveAt(i)
+
+          Console.Write("successfully")
           return true ;
         }
 

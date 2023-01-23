@@ -7,7 +7,7 @@ namespace LibraryManagement
       Lost,
     };
 
-    public class Book : Rack
+    public class Book
     {
         public int bookID ;
         public string title ;
