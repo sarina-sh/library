@@ -6,6 +6,7 @@ namespace LibraryManagement
         static void MemberCli(Member member, Library library)
         {
             Console.WriteLine("welcome :)");
+            Console.WriteLine("please enter the action..");
             string Action = Console.ReadLine();
             
             if (Action == "search book by title")
@@ -78,6 +79,7 @@ namespace LibraryManagement
 
         static void LibrarianCli(Librarian librarian, Library library)
         {
+            Console.WriteLine("please enter the action..");
             string Action = Console.ReadLine();
             
             if (Action == "register member")
@@ -105,9 +107,13 @@ namespace LibraryManagement
                 library.removeMember(id);
             }
 
-            if (Action == "get all member")
+            if (Action == "get all members")
             {
-                library.getAllMembers();
+                List<Member> allmembers = library.getAllMembers();
+                for (int i = 0; i < allmembers.Count; i++)
+                {
+                    Console.WriteLine(allmembers[i].id);
+                }
             }
 
             if (Action == "check active card")
@@ -163,6 +169,7 @@ namespace LibraryManagement
                 string Action = Console.ReadLine();
                 if (Action == "Login")
                 {
+                    Console.WriteLine("please enter the ID : ");
                     int Id = Int32.Parse(Console.ReadLine());
                     if (Id == librarian.id)
                     {
