@@ -9,54 +9,26 @@ namespace LibraryManagement
                       string gender ,
                       int age ,
                       int id ,
-                      string password ,
-                      Role role ,
-                      AccountStatus accountStatus ,
                       string emailAddress ,
                       string number)
                       :base( name ,
                             gender ,
                             age ,
                             id ,
-                            password ,
-                            role ,
-                            accountStatus ,
                             emailAddress ,
                             number 
                       )
     {
 
     }
-
-    private List<Member> members = new List<Member>();
-    public  bool registerMember(Member new_member){
-      return true ; 
-    }
-    public  bool removeMember(int id ){
-      return true ;
-    }
-    public  List<Member> getAllMembers(){
-      List<Member> members = new List<Member>();
-      return  members ;
-    }
     
-    public List<Book> searchByMember(int id)
-    {
-      List<Book> borrowBooks = new List<Book>();
-      return borrowBooks;
-    }
-
-    public List<Member> searchByBookName(string name)
-    {
-      List<Member> Bmembers = new List<Member>();
-      return Bmembers;
-    }
-
+    
     public bool printLibCard(Member member){
-      LibCard card=new LibCard(member.id, member.name, member.dueDate);
+      LibCard card = new LibCard(member.id, member.name, member.dueDate, true);
       Console.Write("Print Card.");
       return true;
     }
+    
   }
 }
 

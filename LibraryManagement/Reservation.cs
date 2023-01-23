@@ -4,36 +4,40 @@ namespace LibraryManagement
     public enum ReservationStatus
     {
       Completed , 
-      Canceled
+      Canceled, 
+      Returned
     }
 
     public class Reservation 
     {
         public DateTime startDate ; 
-        public int duration ;
         public DateTime returnDate ;
         public ReservationStatus status ;
+        public Book book;
+        public DateTime dueDate;
     
-        public Reservation(DateTime startDate, int duration)
+        public Reservation(DateTime startDate, DateTime dueDate, Book book)
         {
             this.startDate = startDate ;
-            this.duration = duration ;
+            this.dueDate = dueDate;
+            this.book = book;
         }
-        public  ReservationStatus getStatus()
+        
+        public ReservationStatus getStatus()
         {  
-          ReservationStatus s = new ReservationStatus() ;
-          return s ;
+            return status;
         }
-        public  bool reserveBook(int bookID , int id)
+        
+        public  DateTime getStartDate()
         {
-          return true ;
+            return startDate ;
         }
+        
         public  DateTime getReturnDate()
         {
-           DateTime returnDate = new DateTime () ;
-          return returnDate ;
+            return returnDate ;
         }
     }
-
+    
 
 }

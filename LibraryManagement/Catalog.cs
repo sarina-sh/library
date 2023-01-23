@@ -28,14 +28,11 @@
             this.bookSubject = bookSubject ;
             this.bookPublicationDate = bookPublicationDate ;
         }
-
-
-        public bool updateCatalog() 
-        {
-            return true ;
-        }
+        
     }
 
 }
+
+
 
 

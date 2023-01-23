@@ -8,34 +8,40 @@ namespace LibraryManagement
   string gender ,
   int age ,
   int id ,
-  string password ,
-  Role role ,
-  AccountStatus accountStatus ,
   string emailAddress ,
   string number 
 ) :base( name ,
    gender ,
   age ,
   id ,
-  password ,
-  role ,
-  accountStatus ,
    emailAddress ,
   number 
 )
     {
 
     }
-    public List<Book> reservedBooks  = new List<Book>();
+    public List<Reservation> reserved  = new List<Reservation>();
     public int limit ;
+    public LibCard card;
+    
 
     
-    public   List<Book> getReservedBooks()
+    public List<Book> getReservedBooks()
     {
-      List<Book> books =  new List<Book> () ;
-      return books ;
+      List<Book> booksReserved = new List<Book>();
+      for (int i = 0; i < reserved.Count; i++)
+      {
+        booksReserved.Add(reserved[i].book);
+      }
+      return booksReserved ;
     }
 
+    public void AddReservation(Reservation reservation)
+    {
+      reserved.Add(reservation);
+    }
+    
   }
+  
 }
 
