@@ -3,7 +3,7 @@ namespace LibraryManagement
 {
     class Program
     {
-        static void MemberCli(int id, Library library)
+        static void MemberCli(Member member, Library library)
         {
             Console.WriteLine("welcome :)");
             string Action = Console.ReadLine();
@@ -34,6 +34,31 @@ namespace LibraryManagement
                 Console.WriteLine("please enter the pubDate");
                 DateTime pubDate = DateTime.Parse(Console.ReadLine());
                 library.searchByPubDate(pubDate);
+            }
+
+            if (Action == "add reservation")
+            {
+                Console.WriteLine("please enter the start date");
+                DateTime startDate = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the due date");
+                DateTime dueDate = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the bookId");
+                int bookId = Int32.Parse(Console.ReadLine());
+                for (int i = 0; i < library.allBooks.Count; i++)
+                {
+                    if (library.allBooks[i].bookID == bookId)
+                    {
+                        if (library.allBooks[i].status == BookStatus.Reserves)
+                        {
+                            Console.WriteLine("this book is reserved");
+                        }
+                        else
+                        {
+                            Reservation reserve = new Reservation(startDate, dueDate, library.allBooks[i]);
+                            member.AddReservation(reserve);
+                        }
+                    }
+                }
             }
 
         }
@@ -123,7 +148,7 @@ namespace LibraryManagement
                         {
                             if (library.members[i].id == Id)
                             {
-                                MemberCli(library.members[i].id, library);
+                                MemberCli(library.members[i], library);
                             }
                             else
                             {
