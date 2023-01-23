@@ -9,13 +9,14 @@ namespace LibraryManagement
     public DateTime dueDate ;
     public string emailAddress ;
     public string number ;
+    public string password ;
 
     public Account(string name ,
                     string gender ,
                     int age ,
                     int id ,
                     string emailAddress ,
-                    string number)
+                    string number , string password )
     {
       this.name = name ;
       this.gender = gender ;
@@ -23,15 +24,23 @@ namespace LibraryManagement
       this.id = id ;
       this.emailAddress = emailAddress ;
       this.number = number ;
+      this.password =   password  ;
 
     }
 
-    public static bool resetPassword(string new_password) 
+    public static bool resetPassword(string current_password ,string new_password  ) 
     {
-        return true ;
-    }
-    
+        if (current_password == this.password )
+        {
+          this.password = new_password ;
+        }
+        Console.WriteLine("Password update successfully.");
+          
+          return true ;
+
+    }   
+
+}
 }
 
 
-}
