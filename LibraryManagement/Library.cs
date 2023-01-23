@@ -180,7 +180,7 @@
             email_not.Notify();
         }
         
-        public  List<Member> getAllMembers(){
+        public List<Member> getAllMembers(){
             return members ;
         }
 
