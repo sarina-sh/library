@@ -1,23 +1,33 @@
-using system ;
 using System.Collections.Generic;
-
 
 namespace LibraryManagement
 {
 
-  public class  Librarian :Account
+  public class Librarian : Account
   {
-    private List<Member> members = new List<member>();
-    public static bool registerMember(Member new_member){
-      return true ; 
+    public Librarian( string name ,
+                      string gender ,
+                      int age ,
+                      int id ,
+                      string emailAddress ,
+                      string number)
+                      :base( name ,
+                            gender ,
+                            age ,
+                            id ,
+                            emailAddress ,
+                            number 
+                      )
+    {
+
     }
-    public static bool removeMember(int id ){
-      return true ;
+    
+    
+    public bool printLibCard(Member member){
+      Console.Write("Print Card.");
+      return true;
     }
-    public static List<Member> getAllMembers(){
-      return  members ;
-    }
-  
+    
   }
 }
 

@@ -14,6 +14,7 @@
             return instance;
         }
         public List<Book> getBooks() {
+            Console.Write("All Books return");
             return books;
         }
         public static List<Book> getExistingBook()

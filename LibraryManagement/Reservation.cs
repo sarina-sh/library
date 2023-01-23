@@ -1,41 +1,43 @@
-using system ;
-using System.Collections.Generic;
-
-
 namespace LibraryManagement
 {
 
     public enum ReservationStatus
     {
       Completed , 
-      Canceled
+      Canceled, 
+      Returned
     }
 
     public class Reservation 
     {
         public DateTime startDate ; 
-        public int duration ;
         public DateTime returnDate ;
         public ReservationStatus status ;
+        public Book book;
+        public DateTime dueDate;
     
-        public Reservation(DateTime startDate, int duration)
+        public Reservation(DateTime startDate, DateTime dueDate, Book book)
         {
             this.startDate = startDate ;
-            this.duration = duration ;
+            this.dueDate = dueDate;
+            this.book = book;
         }
-        public static ReservationStatus getStatus()
+        
+        public ReservationStatus getStatus()
         {  
-            return status ;
+            return status;
         }
-        public static bool reserveBook(int bookID , int id)
+        
+        public  DateTime getStartDate()
         {
-          return true ;
+            return startDate ;
         }
-        public static DateTime getReturnDate()
+        
+        public  DateTime getReturnDate()
         {
-          return returnDate ;
+            return returnDate ;
         }
     }
-
+    
 
 }
