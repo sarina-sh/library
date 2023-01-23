@@ -24,16 +24,16 @@ namespace LibraryManagement
     public int limit ;
     public LibCard card;
     
-
+    public List<Book> booksReserved = new List<Book>();
+    
     
     public List<Book> getReservedBooks()
     {
-      List<Book> booksReserved = new List<Book>();
       for (int i = 0; i < reserved.Count; i++)
       {
-        booksReserved.Add(reserved[i].book);
+        this.booksReserved.Add(reserved[i].book);
       }
-      return booksReserved ;
+      return this.booksReserved ;
     }
 
     public void AddReservation(Reservation reservation)

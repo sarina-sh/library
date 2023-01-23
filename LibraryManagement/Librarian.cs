@@ -22,9 +22,14 @@ namespace LibraryManagement
 
     }
     
-    
-    public bool printLibCard(Member member){
-      Console.Write("Print Card.");
+    List<LibCard> lib = new List<LibCard> () ;
+
+
+    public bool printLibCard(Member member){ 
+      DateTime now = new DateTime.Now(); 
+      LibCard lib_card = new LibCard(lib.count+1, now, true)
+      lib.add(lib_card) ;
+      Console.Write("Libcard printed.");
       return true;
     }
     

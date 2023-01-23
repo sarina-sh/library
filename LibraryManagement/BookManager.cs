@@ -1,5 +1,4 @@
-
-  namespace LibraryManagement
+namespace LibraryManagement
 {
     class BookManager
     {
