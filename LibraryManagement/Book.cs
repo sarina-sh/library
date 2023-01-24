@@ -24,7 +24,6 @@ namespace LibraryManagement
         public DateTime publicationDate ;
         public BookStatus status ;
         public DateTime borrowedTime ;
-        public Catalog catalog ;
 
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,

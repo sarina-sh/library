@@ -20,88 +20,96 @@
             this.members = members;
         }
 
-        public void getBooks() {
+        public int getBooks() {
             Console.Write("All Books Are:");
 
             for(int i=0; i<allBooks.Count; i++)
               Console.WriteLine($"{i+1} => {allBooks[i]}");
+
+            return allBooks.Count;
         }
 
-        public void getExistingBook()
+        public int getExistingBook()
         {
-          Console.Write("All Available Books Are:");
+            Console.Write("All Available Books Are:");
 
-          for(int i=0; i<allBooks.Count; i++)
-            if (allBooks[i].status == BookStatus.Available)
-              Console.WriteLine($"{i+1} => {allBooks[i]}");
+            List<Book> available_books = new List<Book>();
+            for(int i=0; i<allBooks.Count; i++)
+                if (allBooks[i].status == BookStatus.Available)
+                    available_books.Add(allBooks[i]);
+
+            for (int i=0; i<available_books.Count; i++)
+                Console.WriteLine($"{i+1} => {available_books[i]}");
+
+            return available_books.Count;
         }
 
         public bool addBook(Book book){
-          allBooks.Add(book);
+            allBooks.Add(book);
 
-          Console.Write("successfully");
-          return true ;
+            Console.Write("successfully");
+            return true ;
         }
 
         public bool removeBook(int bookID){
-          for(int i=0; i<allBooks.Count; i++)
-            if (allBooks[i].bookID == bookID)
-              allBooks.RemoveAt(i);
+            for(int i=0; i<allBooks.Count; i++)
+                if (allBooks[i].bookID == bookID)
+                    allBooks.RemoveAt(i);
 
-          Console.Write("successfully");
-          return true ;
+            Console.Write("successfully");
+            return true ;
         }
 
-        public List<Catalog> searchByTitle(string title)
+        public List<Book> searchByTitle(string title)
         {
-            List<Catalog> Tcatalogs = new List<Catalog>();
+            List<Book> books = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].title == title)
                 {
-                    Tcatalogs.Add(allBooks[i].catalog);
+                    books.Add(allBooks[i]);
                 }
             }
 
-            return Tcatalogs;
+            return books;
         }
 
-        public List<Catalog> searchByAuthor(string author)
+        public List<Book> searchByAuthor(string author)
         {
-            List<Catalog> Acatalogs = new List<Catalog>();
+            List<Book> books = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].author == author)
                 {
-                    Acatalogs.Add(allBooks[i].catalog);
+                    books.Add(allBooks[i]);
                 }
             }
 
-            return Acatalogs;
+            return books;
         }
 
-        public List<Catalog> searchBySubject(string subject)
+        public List<Book> searchBySubject(string subject)
         {
-            List<Catalog> Scatalogs = new List<Catalog>();
+            List<Book> books = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].subject == subject)
                 {
-                    Scatalogs.Add(allBooks[i].catalog);
+                    books.Add(allBooks[i]);
                 }
             }
 
-            return Scatalogs;
+            return books;
         }
 
-        public List<Catalog> searchByPubDate(DateTime pubDate)
+        public List<Book> searchByPubDate(DateTime pubDate)
         {
-            List<Catalog> Pcatalogs = new List<Catalog>();
+            List<Book> Pcatalogs = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].publicationDate == pubDate)
                 {
-                    Pcatalogs.Add(allBooks[i].catalog);
+                    Pcatalogs.Add(allBooks[i]);
                 }
             }
 
