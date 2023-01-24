@@ -19,13 +19,19 @@
               Console.WriteLine($"{i+1} => {allBooks[i]}");
         }
 
-        public void getExistingBook()
+        public int getExistingBook()
         {
-          Console.Write("All Available Books Are:");
+            Console.Write("All Available Books Are:");
 
-          for(int i=0; i<allBooks.Count; i++)
-            if (allBooks[i].status == BookStatus.Available)
-              Console.WriteLine($"{i+1} => {allBooks[i]}");
+            List<Book> available_books = new List<Book>();
+            for(int i=0; i<allBooks.Count; i++)
+                if (allBooks[i].status == BookStatus.Available)
+                    available_books.Add(allBooks[i]);
+
+            for (int i=0; i<available_books.Count; i++)
+                Console.WriteLine($"{i+1} => {available_books[i]}");
+
+            return available_books.Count;
         }
 
         public void addBook(Book book){
@@ -44,44 +50,44 @@
 
         public List<Book> searchByTitle(string title)
         {
-            List<Book> Tcatalogs = new List<Book>();
+            List<Book> books = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].title == title)
                 {
-                    Tcatalogs.Add(allBooks[i]);
+                    books.Add(allBooks[i]);
                 }
             }
 
-            return Tcatalogs;
+            return books;
         }
 
         public List<Book> searchByAuthor(string author)
         {
-            List<Book> Acatalogs = new List<Book>();
+            List<Book> books = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].author == author)
                 {
-                    Acatalogs.Add(allBooks[i]);
+                    books.Add(allBooks[i]);
                 }
             }
 
-            return Acatalogs;
+            return books;
         }
 
         public List<Book> searchBySubject(string subject)
         {
-            List<Book> Scatalogs = new List<Book>();
+            List<Book> books = new List<Book>();
             for (int i = 0; i < allBooks.Count; i++)
             {
                 if (allBooks[i].subject == subject)
                 {
-                    Scatalogs.Add(allBooks[i]);
+                    books.Add(allBooks[i]);
                 }
             }
 
-            return Scatalogs;
+            return books;
         }
 
         public List<Book> searchByPubDate(DateTime pubDate)
