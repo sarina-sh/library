@@ -11,11 +11,15 @@ namespace LibraryManagement
       public double getFine(int bookID , int id)
       {
          DateTime d = DateTime.Now ;
-        
+         List<Book> allBooks = new List<Book>();
+         List<Member> members = new List<Member>();
+
+         Library lib = new Library(allBooks, members);
+               
     
     
-        for (int i = 0; i <  Library.members.Count; i++)
-            {   var m = Library.members[i] ;
+         for (int i = 0; i <  lib.members.Count; i++)
+            {   var m = lib.members[i] ;
                 if (m.id == id)
                 {
                   for (int j = 0; j < m.reserved.Count ; j++)
