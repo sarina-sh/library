@@ -25,11 +25,6 @@ namespace LibraryManagement
       this.number = number ;
 
     }
-
-    public static bool resetPassword(string new_password) 
-    {
-        return true ;
-    }
     
 }
 

@@ -15,6 +15,7 @@ namespace LibraryManagement
         public ReservationStatus status ;
         public Book book;
         public DateTime dueDate;
+        public double fine;
     
         public Reservation(DateTime startDate, DateTime dueDate, Book book)
         {
@@ -37,6 +38,7 @@ namespace LibraryManagement
         {
             return returnDate ;
         }
+        
     }
     
 

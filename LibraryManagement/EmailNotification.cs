@@ -9,10 +9,9 @@ namespace LibraryManagement
         }
 
         public void Notify() {
-            // input = Member member
-            // email.send(member.email, this.content)
-            Console.Write($"Email Notification Sended To {emailAddress}.");
-            Console.Write($"Content Of Email: {content}");
+            Console.WriteLine($"Email Notification Sended To {emailAddress}. ");
+            Console.WriteLine($"Content Of Email: {content}. ");
+            Console.WriteLine("-----------------------");
         }
     }
 }
