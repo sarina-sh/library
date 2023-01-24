@@ -7,12 +7,13 @@ namespace LibraryManagementTests{
     {
         [Fact]
         public void Test1(){
-            Book book_1 = new Book(1, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available, new DateTime(2023, 1, 23));
-            Book book_2 = new Book(2, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 4, "3hVh5DkdLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available, new DateTime(2023, 1, 14));
-            Book book_3 = new Book(3, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 2, "3hVh5DkdLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available, new DateTime(2023, 1, 22));
-            Book book_4 = new Book(4, "Atomic Habits", "Self-help" , "James Clear", "Avery", "PER", 320, 1, "2LVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Reserves, new DateTime(2023, 1, 23));
+
+            Book book_1 = new Book(1, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+            Book book_2 = new Book(2, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 4, "3hVh5DkdLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+            Book book_3 = new Book(3, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 2, "3hVh5DkdLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+            Book book_4 = new Book(4, "Atomic Habits", "Self-help" , "James Clear", "Avery", "PER", 320, 1, "2LVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Reserves);
             
-            Book book_5 = new Book(5, "Open Mind", "Self-help" , "Dawna Markova", "Conari Press", "ENG", 224, 3, "2LVh28jiLr", false, 49.98, new DateTime(1996, 11, 1), BookStatus.Available, new DateTime(2023, 1, 24));
+            Book book_5 = new Book(5, "Open Mind", "Self-help" , "Dawna Markova", "Conari Press", "ENG", 224, 3, "2LVh28jiLr", false, 49.98, new DateTime(1996, 11, 1), BookStatus.Available);
 
             List<Book> allBooks = new List<Book>();
             List<Member> members = new List<Member>();
@@ -24,7 +25,7 @@ namespace LibraryManagementTests{
             lib.addBook(book_4);
             lib.addBook(book_5);
 
-            // // Test Class: Book
+            // Test Class: Book
             Assert.Equal(allBooks[0].author,"James Clear");
             Assert.Equal(allBooks[1].title,"Atomic Habits");
             Assert.Equal(allBooks[2].status,BookStatus.Available);
@@ -33,14 +34,14 @@ namespace LibraryManagementTests{
             Assert.Equal(lib.allBooks.Count,5);
 
             // Test getBooks()
-            Assert.Equal(lib.getBooks(),5);
+            Assert.Equal(lib.getAllBooks(),5);
 
             // Test getExistingBook()
             Assert.Equal(lib.getExistingBook(),4);
 
             // Test removeBook()
             Assert.Equal(lib.removeBook(3),true);
-            Assert.Equal(lib.getBooks(),4);
+            Assert.Equal(lib.getAllBooks(),4);
             Assert.Equal(lib.getExistingBook(),3);
 
             // Test searchByTitle

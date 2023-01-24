@@ -178,8 +178,9 @@ namespace LibraryManagement
                 int price = Int32.Parse(Console.ReadLine());
                 Console.WriteLine("please enter the due publicationDate");
                 DateTime publicationDate = DateTime.Parse(Console.ReadLine());
+                BookStatus status = BookStatus.Available;
                 Book book = new Book(id, title, subject, author, publisher, language, numOfPage,
-                    count, barcode, isRefrence, price, publicationDate);
+                    count, barcode, isRefrence, price, publicationDate, status);
                 library.addBook(book);
             }
             
@@ -219,19 +220,19 @@ namespace LibraryManagement
 
             Book book_1 = new Book(1, "Atomic Habits 1", "Self-help" , "James Clear", 
                 "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
-                14.11, new DateTime(2015, 12, 25));
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
             
             Book book_2 = new Book(2, "Atomic Habits 2", "Self-help" , "James Clear", 
                 "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
-                14.11, new DateTime(2015, 12, 25));
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
             
             Book book_3 = new Book(3, "Atomic Habits 3", "Self-help" , "James Clear", 
                 "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
-                14.11, new DateTime(2015, 12, 25));
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
             
             Book book_4 = new Book(4, "Atomic Habits 4", "Self-help" , "James Clear", 
                 "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
-                14.11, new DateTime(2015, 12, 25));
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
 
             Member member_1 = new Member("member1", "female", 22, 1, "family@gmail.com", "0234567899");
             
@@ -245,8 +246,14 @@ namespace LibraryManagement
             Library library = new Library(allBooks, allMembers);  
             
             
-            allMembers.Add(member_1); allMembers.Add(member_2); allMembers.Add(member_3);
-            allBooks.Add(book_1); allBooks.Add(book_2); allBooks.Add(book_3); allBooks.Add(book_4);
+            allMembers.Add(member_1);
+            allMembers.Add(member_2);
+            allMembers.Add(member_3);
+            
+            allBooks.Add(book_1);
+            allBooks.Add(book_2);
+            allBooks.Add(book_3);
+            allBooks.Add(book_4);
 
             while (true)
             {

@@ -4,19 +4,8 @@ namespace LibraryManagement
 {
   public class  Member :Account
   {
-    public Member( string name ,
-  string gender ,
-  int age ,
-  int id ,
-  string emailAddress ,
-  string number 
-) :base( name ,
-   gender ,
-  age ,
-  id ,
-   emailAddress ,
-  number 
-)
+    public Member( string name , string gender , int age , int id , string emailAddress ,string number ) :base(
+      name, gender, age, id, emailAddress, number)
     {
 
     }

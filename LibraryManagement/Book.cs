@@ -22,11 +22,11 @@ namespace LibraryManagement
         public bool isRefrence ;
         public double price ;
         public DateTime publicationDate ;
-        public BookStatus status = BookStatus.Available;
+        public BookStatus status ;
 
         public Book(int bookID, string title, string subject, string author,
                     string publisher, string language, int numOfPages, int count,
-                    string barcode, bool isRefrence, double price, DateTime publicationDate)
+                    string barcode, bool isRefrence, double price, DateTime publicationDate, BookStatus status)
         {
             this.bookID = bookID;
             this.title = title;
@@ -41,6 +41,7 @@ namespace LibraryManagement
             this.isRefrence = isRefrence;
             this.price = price;
             this.publicationDate = publicationDate;
+            this.status = status;
         }
 
     }

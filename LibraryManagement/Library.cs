@@ -12,11 +12,13 @@
             this.members = members;
         }
 
-        public void getAllBooks() {
+        public int getAllBooks() {
             Console.Write("All Books Are:");
 
             for(int i=0; i<allBooks.Count; i++)
               Console.WriteLine($"{i+1} => {allBooks[i]}");
+
+            return allBooks.Count;
         }
 
         public int getExistingBook()
@@ -40,12 +42,14 @@
           Console.Write("successfully");
         }
 
-        public void removeBook(int bookID){
-          for(int i=0; i< allBooks.Count; i++)
-            if (allBooks[i].bookID == bookID)
-              allBooks.RemoveAt(i);
+        public bool removeBook(int bookID){
+            for(int i=0; i< allBooks.Count; i++)
+                if (allBooks[i].bookID == bookID)
+                    allBooks.RemoveAt(i);
 
-          Console.Write("successfully");
+            Console.Write("successfully");
+
+            return true;
         }
 
         public List<Book> searchByTitle(string title)
