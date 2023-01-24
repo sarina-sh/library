@@ -3,32 +3,37 @@ namespace LibraryManagement
     class Fine
     {
       public DateTime date  ;
-      public  double fine =0  ;
+      public  double fine   ;
       public Fine(DateTime date)
       {
         this.date = date ;
       }
       public double getFine(int bookID , int id)
       {
-        DateTime d - DateTime.Now ;
+         DateTime d = DateTime.Now ;
         
-        for (int i = 0; i < Library.members.Count; i++)
-            {   m = Library.members[i] ;
+        var L = Library.members ;
+        for (int i = 0; i <  Library.members.Count; i++)
+            {   var m = Library.members[i] ;
                 if (m.id == id)
                 {
                   for (int j = 0; j < m.reserved.Count ; j++)
                   {
-                      b = m.reserved[j]
+
+                      Reservation b = m.reserved[j];
+                    
                       if(bookID == b.book.bookID )
                       {
                         //addssf
-                        if (b.book.dueDate < d)
+                        if (b.dueDate < d)
                         {
-                          this.fine = (d - b.book.dueDate)*this.fine 
+                          double ne = (d.Month - b.dueDate.Month)*30 + (d.Day - b.dueDate.Day ) *  fine ;
+                          fine = ne;
+                          // this.fine = (d.Subtract(b.dueDate)).Tostring().Split[0].parse()  *this.fine ;
 
                         }
                         
-                        Console.WriteLine($"The fine is {this.fine}") ;
+                        Console.WriteLine($"The fine is {fine}") ;
                       }
 
                   }
@@ -36,7 +41,7 @@ namespace LibraryManagement
                 }
             }
         
-        return this.fine ;
+        return fine ;
       }
       
     }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-
+using System;
+using System.Globalization;
 namespace LibraryManagement
 {
 
@@ -10,13 +11,14 @@ namespace LibraryManagement
                       int age ,
                       int id ,
                       string emailAddress ,
-                      string number)
+                      string number,string password)
                       :base( name ,
                             gender ,
                             age ,
                             id ,
                             emailAddress ,
-                            number 
+                            number,
+                            password 
                       )
     {
 
@@ -26,9 +28,10 @@ namespace LibraryManagement
 
 
     public bool printLibCard(Member member){ 
-      DateTime now = new DateTime.Now(); 
-      LibCard lib_card = new LibCard(lib.count+1, now, true)
-      lib.add(lib_card) ;
+      DateTime now = DateTime.Now;
+      LibCard lib_card = new LibCard((
+        lib.Count) +1, now, true);
+      lib.Add(lib_card);
       Console.Write("Libcard printed.");
       return true;
     }

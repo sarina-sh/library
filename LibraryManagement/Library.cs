@@ -4,7 +4,7 @@
     {
         // public static Library instance = new Library();
 
-        public List<Member> members;
+        public   List<Member> members = new List<Member> ();
         public List<Book> allBooks;
 
         // Library getInstance() {

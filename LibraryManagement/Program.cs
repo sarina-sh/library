@@ -96,7 +96,11 @@ namespace LibraryManagement
                 string emailAddress = Console.ReadLine();
                 Console.WriteLine("please enter the number : ");
                 string number = Console.ReadLine();
-                Member member = new Member(name, gender, age, id, emailAddress, number);
+                Console.WriteLine("please enter the password : ");
+                string password = Console.ReadLine();
+              
+                
+                Member member = new Member(name, gender, age, id, emailAddress, number,password);
                 library.registerMember(member);
             }
 
@@ -157,7 +161,7 @@ namespace LibraryManagement
             Fine f = new Fine(now) ;
     
             Librarian librarian = new Librarian("user" ,"Female", 22 ,2 ,
-                "user@gmail.com" , "99999999999" );
+                "user@gmail.com" , "99999999999", "123" );
 
             Book book_1 = new Book(1, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available, new DateTime(2023, 1, 23));
 

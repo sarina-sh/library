@@ -28,11 +28,11 @@ namespace LibraryManagement
 
     }
 
-    public static bool resetPassword(string current_password ,string new_password  ) 
+    public bool resetPassword(string current_password ,string new_password  ) 
     {
         if (current_password == this.password )
         {
-          this.password = new_password ;
+           this.password = new_password ;
         }
         Console.WriteLine("Password update successfully.");
           
