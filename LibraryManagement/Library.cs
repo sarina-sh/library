@@ -166,6 +166,8 @@
             email_not.Notify();
         }
         
+
+        
         public void removeMember(int id){
 
             for (int i = 0; i < members.Count; i++)

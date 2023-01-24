@@ -80,6 +80,47 @@ namespace LibraryManagementTests{
 
             Assert.Equal(resultSearchPubDate ,resultAnswerPubDate);
             Assert.Equal(resultSearchPubDate.Count,3);
+
+            Librarian librarian = new Librarian("user" ,"Female", 22 ,2 ,"user@gmail.com" , "99999999999", "123" );
+            Member member_1 = new Member("member1", "female", 22, 1, "family@gmail.com", "0234567899" , "123");
+            Member member_2 = new Member("member2", "male", 22, 2, "family@gmail.com", "0234678999","232");
+            Member member_3 = new Member("member3", "female", 22, 3, "family@gmail.com", "02345603452","435");
+        
+            lib.registerMember(member_1);
+            lib.registerMember(member_2);
+            lib.registerMember(member_3);
+
+
+            //Test class member
+            Assert.Equal(members[0].name ,"member1");
+            Assert.Equal(members[0].gender ,"female");
+            Assert.Equal(members[0].age ,22);
+            Assert.Equal(members[1].id ,2);
+            Assert.Equal(members[1].emailAddress ,"family@gmail.com");
+            Assert.Equal(members[2].number ,"02345603452");
+            Assert.Equal(members[2].password ,"435");
+
+            // Test registerMember()
+            Assert.Equal(lib.members.Count,3);
+
+            //remove member()
+            lib.removeMember(1) ;
+            Assert.Equal(lib.members[1].id , 3);
+            Assert.Equal(lib.members.Count , 2);
+            Assert.Equal(lib.getAllMembers() , lib.members);
+
+
+            //getAllMembers()
+            Assert.Equal(lib.getAllMembers() , lib.members);
+
+            //reserve book()
+            DateTime n = DateTime.Now ;
+            lib.reserveBook( 1, 1, n , n ) ;
+            Assert.Equal(member_1.reserved.Count  , 0 ) ;
+
+            
+     
+
         }
     }
 }
