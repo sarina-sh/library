@@ -245,6 +245,7 @@
                                     members[i].emailAddress);
                                 email_not.Notify(); 
                             }
+                            
                         }
                     }
                 }
