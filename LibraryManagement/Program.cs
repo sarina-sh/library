@@ -136,7 +136,7 @@ namespace LibraryManagement
             
             if (Action == "search book by memberId")
             {
-                Console.WriteLine("please enter the pubDate");
+                Console.WriteLine("please enter the memberId");
                 int memberId = Int32.Parse(Console.ReadLine());
                 library.searchByMember(memberId);
             }
@@ -150,9 +150,70 @@ namespace LibraryManagement
                     if (library.members[i].id == memberId)
                     {
                         library.members[i].card.setInActive();
+                        Console.WriteLine($"member by id : {library.members[i].id} -> " +
+                                          $"your card is {library.members[i].card.active}");
                     }
                 }
             }
+
+            if (Action == "add book")
+            {
+                Console.WriteLine("please enter the id");
+                int id = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the title");
+                string title = Console.ReadLine();
+                Console.WriteLine("please enter the subject");
+                string subject = Console.ReadLine();
+                Console.WriteLine("please enter the author");
+                string author = Console.ReadLine();
+                Console.WriteLine("please enter the publisher");
+                string publisher = Console.ReadLine();
+                Console.WriteLine("please enter the language");
+                string language = Console.ReadLine();
+                Console.WriteLine("please enter the numOfPage");
+                int numOfPage = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the count");
+                int count = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the barcode");
+                string barcode = Console.ReadLine();
+                Console.WriteLine("please enter the isRefrence");
+                bool isRefrence = bool.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the price");
+                int price = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the due publicationDate");
+                DateTime publicationDate = DateTime.Parse(Console.ReadLine());
+                BookStatus status = BookStatus.Available;
+                Book book = new Book(id, title, subject, author, publisher, language, numOfPage,
+                    count, barcode, isRefrence, price, publicationDate, status);
+                library.addBook(book);
+            }
+            
+            if (Action == "remove book")
+            {
+                Console.WriteLine("please enter the id");
+                int id = Int32.Parse(Console.ReadLine());
+                library.removeBook(id);
+            }
+
+            if (Action == "get all books")
+            {
+                library.getAllBooks();
+            }
+
+            if (Action == "get existing books")
+            {
+                library.getExistingBook();
+            }
+
+            if (Action == "calculate fine")
+            {
+                Console.WriteLine("please enter the memberId");
+                int memberId = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("please enter the bookId");
+                int bookId = Int32.Parse(Console.ReadLine());
+                library.getFine(bookId, memberId);
+            }
+
         }
         
         static void Main(string[] args)
@@ -163,11 +224,42 @@ namespace LibraryManagement
             Librarian librarian = new Librarian("user" ,"Female", 22 ,2 ,
                 "user@gmail.com" , "99999999999", "123" );
 
-            Book book_1 = new Book(1, "Atomic Habits", "Self-help" , "James Clear", "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 14.11, new DateTime(2015, 12, 25), BookStatus.Available, new DateTime(2023, 1, 23));
+            Book book_1 = new Book(1, "Atomic Habits 1", "Self-help" , "James Clear", 
+                "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+            
+            Book book_2 = new Book(2, "Atomic Habits 2", "Self-help" , "James Clear", 
+                "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+            
+            Book book_3 = new Book(3, "Atomic Habits 3", "Self-help" , "James Clear", 
+                "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+            
+            Book book_4 = new Book(4, "Atomic Habits 4", "Self-help" , "James Clear", 
+                "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
+                14.11, new DateTime(2015, 12, 25), BookStatus.Available);
+
+            Member member_1 = new Member("member1", "female", 22, 1, "family@gmail.com", "0234567899");
+            
+            Member member_2 = new Member("member2", "male", 22, 2, "family@gmail.com", "0234678999");
+            
+            Member member_3 = new Member("member3", "female", 22, 3, "family@gmail.com", "02345603452");
+            
 
             List<Book> allBooks = new List<Book>();
             List<Member> allMembers = new List<Member>();
-            Library library = new Library(allBooks, allMembers);
+            Library library = new Library(allBooks, allMembers);  
+            
+            
+            allMembers.Add(member_1);
+            allMembers.Add(member_2);
+            allMembers.Add(member_3);
+            
+            allBooks.Add(book_1);
+            allBooks.Add(book_2);
+            allBooks.Add(book_3);
+            allBooks.Add(book_4);
 
             while (true)
             {
