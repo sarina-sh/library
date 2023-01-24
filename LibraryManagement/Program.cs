@@ -96,7 +96,11 @@ namespace LibraryManagement
                 string emailAddress = Console.ReadLine();
                 Console.WriteLine("please enter the number : ");
                 string number = Console.ReadLine();
-                Member member = new Member(name, gender, age, id, emailAddress, number);
+                Console.WriteLine("please enter the password : ");
+                string password = Console.ReadLine();
+              
+                
+                Member member = new Member(name, gender, age, id, emailAddress, number,password);
                 library.registerMember(member);
             }
 
@@ -214,9 +218,11 @@ namespace LibraryManagement
         
         static void Main(string[] args)
         {
-            
-            Librarian librarian = new Librarian("user" ,"Female", 22 ,233 ,
-                "user@gmail.com" , "99999999999" );
+            DateTime now = DateTime.Now;
+            Fine f = new Fine(now) ;
+    
+            Librarian librarian = new Librarian("user" ,"Female", 22 ,2 ,
+                "user@gmail.com" , "99999999999", "123" );
 
             Book book_1 = new Book(1, "Atomic Habits 1", "Self-help" , "James Clear", 
                 "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
@@ -234,11 +240,11 @@ namespace LibraryManagement
                 "Avery", "ENG", 320, 5, "1hVh5DjiLr", false, 
                 14.11, new DateTime(2015, 12, 25), BookStatus.Available);
 
-            Member member_1 = new Member("member1", "female", 22, 1, "family@gmail.com", "0234567899");
+            Member member_1 = new Member("member1", "female", 22, 1, "family@gmail.com", "0234567899" , "123");
             
-            Member member_2 = new Member("member2", "male", 22, 2, "family@gmail.com", "0234678999");
+            Member member_2 = new Member("member2", "male", 22, 2, "family@gmail.com", "0234678999","232");
             
-            Member member_3 = new Member("member3", "female", 22, 3, "family@gmail.com", "02345603452");
+            Member member_3 = new Member("member3", "female", 22, 3, "family@gmail.com", "02345603452","435");
             
 
             List<Book> allBooks = new List<Book>();
