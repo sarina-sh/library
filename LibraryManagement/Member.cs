@@ -24,7 +24,6 @@ namespace LibraryManagement
     public int limit ;
     public LibCard card;
     
-
     
     public List<Book> getReservedBooks()
     {
@@ -40,7 +39,7 @@ namespace LibraryManagement
     {
       reserved.Add(reservation);
     }
-    
+
   }
   
 }

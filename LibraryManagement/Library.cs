@@ -2,31 +2,21 @@
 {
     public class Library
     {
-        // public static Library instance = new Library();
-
+        
         public List<Member> members;
         public List<Book> allBooks;
-
-        // Library getInstance() {
-        //     if (instance == null) { 
-        //         instance = new Library();
-        //     }
-        //     return instance;
-        // }
-
+        
         public Library(List<Book> allBooks, List<Member> members)
         {
             this.allBooks = allBooks;
             this.members = members;
         }
 
-        public int getBooks() {
+        public void getAllBooks() {
             Console.Write("All Books Are:");
 
             for(int i=0; i<allBooks.Count; i++)
               Console.WriteLine($"{i+1} => {allBooks[i]}");
-
-            return allBooks.Count;
         }
 
         public int getExistingBook()
@@ -44,20 +34,18 @@
             return available_books.Count;
         }
 
-        public bool addBook(Book book){
-            allBooks.Add(book);
+        public void addBook(Book book){
+          allBooks.Add(book);
 
-            Console.Write("successfully");
-            return true ;
+          Console.Write("successfully");
         }
 
-        public bool removeBook(int bookID){
-            for(int i=0; i<allBooks.Count; i++)
-                if (allBooks[i].bookID == bookID)
-                    allBooks.RemoveAt(i);
+        public void removeBook(int bookID){
+          for(int i=0; i< allBooks.Count; i++)
+            if (allBooks[i].bookID == bookID)
+              allBooks.RemoveAt(i);
 
-            Console.Write("successfully");
-            return true ;
+          Console.Write("successfully");
         }
 
         public List<Book> searchByTitle(string title)
@@ -163,11 +151,14 @@
         public void registerMember(Member new_member)
         {
             members.Add(new_member);
+            Console.WriteLine("successfully");
 
-            SMSNotification sms_not = new SMSNotification("Welcome To Library." , new_member.number);
+            SMSNotification sms_not = new SMSNotification("Welcome To Library." , 
+                new_member.number);
             sms_not.Notify();
 
-            EmailNotification email_not = new EmailNotification("Welcome To Library." , new_member.emailAddress);
+            EmailNotification email_not = new EmailNotification("Welcome To Library." , 
+                new_member.emailAddress);
             email_not.Notify();
         }
         
@@ -177,13 +168,16 @@
             {
                 if (members[i].id == id)
                 {
-                    SMSNotification sms_not = new SMSNotification("Expired Your Membership." , members[i].number);
+                    SMSNotification sms_not = new SMSNotification("Expired Your Membership." , 
+                        members[i].number);
                     sms_not.Notify();
 
-                    EmailNotification email_not = new EmailNotification("Expired Your Membership." , members[i].emailAddress);
+                    EmailNotification email_not = new EmailNotification("Expired Your Membership." , 
+                        members[i].emailAddress);
                     email_not.Notify();
 
                     members.Remove(members[i]);
+                    Console.WriteLine("successfully");
                 }
             }
         }
@@ -217,14 +211,45 @@
                     members[i].reserved.Add(reserve);
 
                     string title_book = book.title;
-                    SMSNotification sms_not = new SMSNotification($"You reserved {title_book}." , members[i].number);
+                    
+                    SMSNotification sms_not = new SMSNotification($"You reserved {title_book}." ,
+                        members[i].number);
                     sms_not.Notify();
 
-                    EmailNotification email_not = new EmailNotification($"You reserved {title_book}." , members[i].emailAddress);
+                    EmailNotification email_not = new EmailNotification($"You reserved {title_book}." ,
+                        members[i].emailAddress);
                     email_not.Notify();                  
                 }
             }            
             return true;
+        }
+        
+        public void getFine(int bookID , int id)
+        {
+            for (int i = 0; i < members.Count; i++)
+            {
+                if (members[i].id == id)
+                {
+                    for (int j = 0; j < members[i].reserved.Count; j++)
+                    {
+                        if (members[i].reserved[j].book.bookID == bookID)
+                        {
+                            if (DateTime.Compare(DateTime.Now, members[i].reserved[j].dueDate) > 0)
+                            {
+                                Console.WriteLine("you must pay fine.");
+                                SMSNotification sms_not = new SMSNotification($"You must pay {members[i].reserved[j].fine}$." , 
+                                    members[i].number);
+                                sms_not.Notify();
+
+                                EmailNotification email_not = new EmailNotification($"You must pay {members[i].reserved[j].fine}$." ,
+                                    members[i].emailAddress);
+                                email_not.Notify(); 
+                            }
+                            
+                        }
+                    }
+                }
+            }
         }
         
     }
