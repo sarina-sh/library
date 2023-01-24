@@ -116,10 +116,7 @@ namespace LibraryManagementTests{
             //reserve book()
             DateTime n = DateTime.Now ;
             lib.reserveBook( 1, 1, n , n ) ;
-            Assert.Equal(member_1.reserved.Count  , 0 ) ;
-
-            
-     
+            Assert.Equal(member_1.reserved.Count , 0 ) ;
 
         }
     }
